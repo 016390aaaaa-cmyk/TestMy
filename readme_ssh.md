@@ -6,7 +6,7 @@
 ![Architecture](https://img.shields.io/badge/Architecture-All%20(OpenWrt)-yellow)
 ![Script](https://img.shields.io/badge/Script-sh-informational)
 ![Status](https://img.shields.io/badge/Status-Active-success)
-[![Views](https://views.whatilearened.today/views/github/StressOzz/Zapret-Manager.svg)](https://github.com/StressOzz/Zapret-Manager)
+[![Views](https://views.whatilearened.today/views/github/016390aaaaa-cmyk/TestMy.svg)](https://github.com/016390aaaaa-cmyk/TestMy)
 
 </div>
 
@@ -17,39 +17,6 @@
 
 ---
 
-### **StressKVN** - умный VPN для стабильного доступа в любых условиях
-
-- ✅ Работает даже при жёсткой фильтрации и в условиях белых списков
-- 🌍 Умная маршрутизация: иностранные ресурсы через VPN, российский трафик напрямую
-- ▶️ YouTube без рекламы
-- ⚡ Высокая скорость и безлимитный трафик
-- 📶 Можно использовать прямо на роутере (OpenWRT)
-- 🎁 Бесплатный тест — 3 дня без оплаты
-
-Подробнее: **https://github.com/StressOzz/StressKVN**
-
----
-
-### Для Windows - используйте: **https://github.com/StressOzz/ZapretOzz**
-
----
-
-<table>
-  <tr>
-    <td>
-      <a href="https://github.com/StressOzz#-поддержать-проект">
-        <img width="280" height="130" src="https://github.com/user-attachments/assets/2999757b-fbf3-4149-bf6c-48bf3e241529">
-      </a>
-    </td>
-    <td>
-      <a href="https://github.com/StressOzz/StressKVN">
-        <img width="280" height="130" alt="image" src="https://github.com/user-attachments/assets/519a126e-bd39-4f46-8a09-3f0d6e1dd8af">
-      </a>
-    </td>
-  </tr>
-</table>
-
----
 
 # 💡  **Рекомендую Zapret Manager WEB + LuCI**
 >[!NOTE]
@@ -57,7 +24,7 @@
 > 
 > Установите панель один раз — в SSH выполните команду:
 > ```
-> sh <(wget -qO - https://raw.githubusercontent.com/StressOzz/Zapret-Manager/main/ZapretManager_LuCI.sh)
+> sh <(wget -qO - https://raw.githubusercontent.com/016390aaaaa-cmyk/TestMy/main/ZapretManager_LuCI.sh)
 > ```
 > и откройте ссылку в брузере (например, `http://192.168.1.1:7788`) на компьютере или телефоне
 > также, в LuCI появится пункт **Zapret Manager**
@@ -107,7 +74,7 @@
 - Установить [**Mixomo**](https://github.com/Internet-Helper/mixomo-openwrt)
 - Установить [**splify**](https://github.com/xyzmean/splify)
 - Установить [**Zapret2 Routerich Edition**](https://github.com/routerich)
-- Интегрировать [**VPN подпиcку**](https://github.com/StressOzz/StressKVN) в **NetShift** и **Mixomo**
+- Интегрировать **VPN подписку** в **NetShift** и **Mixomo**
 - Сгенерировать **WARP** и интегрировать его в **Mixomo**
 - Запустить автоподбор стратегий по расписанию
 
@@ -136,7 +103,7 @@
 
 Для запуска **Zapret Manager** в **LuСI** или **в браузере**, выполните в **SSH**
 ```
-sh <(wget -qO - https://raw.githubusercontent.com/StressOzz/Zapret-Manager/main/ZapretManager_LuCI.sh)
+sh <(wget -qO - https://raw.githubusercontent.com/016390aaaaa-cmyk/TestMy/main/ZapretManager_LuCI.sh)
 ```
 или - запустите основной скрипт → Установить **Zapret Manager для WEB + LuCI**
 
@@ -152,12 +119,12 @@ sh <(wget -qO - https://raw.githubusercontent.com/StressOzz/Zapret-Manager/main/
 > [!IMPORTANT]
 > Если у Вас доступен **githubusercontent.com**:
 ```
-sh <(wget -qO - 'https://raw.githubusercontent.com/StressOzz/Zapret-Manager/main/Zapret-Manager.sh')
+sh <(wget -qO - 'https://raw.githubusercontent.com/016390aaaaa-cmyk/TestMy/main/Zapret-Manager.sh')
 ```
 > [!IMPORTANT]
 > Если у Вас **НЕ** доступен **githubusercontent.com**:
 ```
-rm -f /tmp/ZMS.sh && wget -T 10 -O /tmp/ZMS.sh "https://v4.gh-proxy.org/raw.githubusercontent.com/StressOzz/Zapret-Manager/refs/heads/main/files/proxy_zms.sh" && sh /tmp/ZMS.sh
+rm -f /tmp/ZMS.sh && wget -T 10 -O /tmp/ZMS.sh "https://v4.gh-proxy.org/raw.githubusercontent.com/016390aaaaa-cmyk/TestMy/refs/heads/main/files/proxy_zms.sh" && sh /tmp/ZMS.sh
 ```
 затем в **Меню управления доменами в hosts** выбрать **19** пункт, затем **11** пункт
 
@@ -199,8 +166,8 @@ zms
 
 В скрипте, в пункте 2, затем 0 - Тестировать стратегии для `YouTube` и Тестировать `v` и `Flowseal` стратегии
 
-- [Cтратегии для Youtube](https://github.com/StressOzz/Zapret-Manager/blob/main/Strategies_For_Youtube.md)
-- [Cтратегии используемые в скрипте](https://github.com/StressOzz/Zapret-Manager/blob/main/Strategies.md)
+- [Cтратегии для Youtube](https://github.com/016390aaaaa-cmyk/TestMy/blob/main/Strategies_For_Youtube.md)
+- [Cтратегии используемые в скрипте](https://github.com/016390aaaaa-cmyk/TestMy/blob/main/Strategies.md)
 
 ## 🔹 Telegram
 
@@ -225,7 +192,6 @@ zms
 - Интегрировать **VPN** подписку в **Mihomo**
 
    Вставьте ссылку на свою подписку.
-   Можете воспользоваться [**StressKVN**](https://github.com/StressOzz/StressKVN)
 
    Зайдите на http://192.168.1.1:9090/ui 
    в поле **Хост** введите **192.168.1.1**
@@ -233,7 +199,7 @@ zms
    
 - Сгенерируйте **WARP** 
  
-   Для генерации **WARP** через скрипт понадобится установить **[Zapret](https://github.com/StressOzz/Zapret-Manager)**
+   Для генерации **WARP** через скрипт понадобится установить **[Zapret](https://github.com/016390aaaaa-cmyk/TestMy)**
    
 - Интегрируйте **WARP**
 
@@ -271,22 +237,6 @@ zms
 
 ---
 
-<table>
-  <tr>
-    <td>
-      <a href="https://github.com/StressOzz#-поддержать-проект">
-        <img width="280" height="130" src="https://github.com/user-attachments/assets/2999757b-fbf3-4149-bf6c-48bf3e241529">
-      </a>
-    </td>
-    <td>
-      <a href="https://github.com/StressOzz/StressKVN">
-        <img width="280" height="130" alt="image" src="https://github.com/user-attachments/assets/519a126e-bd39-4f46-8a09-3f0d6e1dd8af">
-      </a>
-    </td>
-  </tr>
-</table>
-
----
 
 # Благодарности:
 

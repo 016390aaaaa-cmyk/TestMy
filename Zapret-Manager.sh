@@ -6,7 +6,7 @@ ZAPRET_MANAGER_VERSION="9.91"; STR_VERSION_AUTOINSTALL="v7"
 GREEN="\033[1;32m"; RED="\033[1;31m"; CYAN="\033[1;36m"; YELLOW="\033[1;33m"; MAGENTA="\033[1;35m"; BLUE="\033[0;34m"; NC="\033[0m"; DGRAY="\033[38;5;244m"
 
 GH_RAW_HOST="https://raw.githubusercontent.com"; GH_MAIN_HOST="https://github.com"
-# GH_PROXY="https://gh-proxy.org/"; GH_CHECK_URL="${GH_RAW_HOST}/StressOzz/Zapret-Manager/refs/heads/main/Zapret-Manager.sh"
+# GH_PROXY="https://gh-proxy.org/"; GH_CHECK_URL="${GH_RAW_HOST}/016390aaaaa-cmyk/TestMy/refs/heads/main/Zapret-Manager.sh"
 # echo -e "${CYAN}Проверяем доступность ${NC}raw.githubusercontent.com"; if wget -q -T 4 -O /dev/null "$GH_CHECK_URL" 2>/dev/null; then GH_OK=1
 GH_RAW="$GH_RAW_HOST"
 GH_MAIN="$GH_MAIN_HOST"
@@ -27,19 +27,19 @@ TG_GO_VERSION="1.4.1"
 TG_MTProto="0.10"
 TGWS_VERSION="0.2.4"
 
-echo "sh <(wget -q -O - ${GH_RAW}/StressOzz/Zapret-Manager/main/Zapret-Manager.sh)" > /usr/bin/zms; chmod +x /usr/bin/zms
-echo "sh <(wget -q -O - ${GH_RAW}/StressOzz/Zapret-Manager/main/Zapret-Manager.sh) \"\$@\"" > /usr/bin/zmsA; chmod +x /usr/bin/zmsA
-echo "sh <(wget -q -O - ${GH_RAW}/StressOzz/Zapret-Manager/main/ZapretManager_LuCI.sh)" > /usr/bin/zmw; chmod +x /usr/bin/zmw
+echo "sh <(wget -q -O - ${GH_RAW}/016390aaaaa-cmyk/TestMy/main/Zapret-Manager.sh)" > /usr/bin/zms; chmod +x /usr/bin/zms
+echo "sh <(wget -q -O - ${GH_RAW}/016390aaaaa-cmyk/TestMy/main/Zapret-Manager.sh) \"\$@\"" > /usr/bin/zmsA; chmod +x /usr/bin/zmsA
+echo "sh <(wget -q -O - ${GH_RAW}/016390aaaaa-cmyk/TestMy/main/ZapretManager_LuCI.sh)" > /usr/bin/zmw; chmod +x /usr/bin/zmw
 
 BASE_URL="${GH_MAIN}/2Grey/awg-openwrt/releases/download/"
 FLOWSEAL_STR_ZIP="${GH_MAIN}/Flowseal/zapret-discord-youtube/archive/refs/heads/main.zip"
-STR_URL="${GH_RAW}/StressOzz/Zapret-Manager/refs/heads/main/files/StrYoutube"
+STR_URL="${GH_RAW}/016390aaaaa-cmyk/TestMy/refs/heads/main/files/StrYoutube"
 RAW="${GH_RAW}/hyperion-cs/dpi-checkers/refs/heads/main/ru/tcp-16-20/suite.v2.json"
 RKN_URL="${GH_RAW}/IndeecFOX/zapret4rocket/refs/heads/master/extra_strats/TCP/RKN/List.txt"
-URL_OLD="${GH_RAW}/StressOzz/Zapret-Manager/refs/heads/main/files/MagiTrickle/configOLD.yaml"
-URL_DEFAULT="${GH_RAW}/StressOzz/Zapret-Manager/refs/heads/main/files/MagiTrickle/config.yaml"
-URL_ITDOG="${GH_RAW}/StressOzz/Zapret-Manager/refs/heads/main/files/MagiTrickle/configAD.yaml"
-EXCLUDE_URL="${GH_RAW}/StressOzz/Zapret-Manager/refs/heads/main/zapret-hosts-user-exclude.txt"
+URL_OLD="${GH_RAW}/016390aaaaa-cmyk/TestMy/refs/heads/main/files/MagiTrickle/configOLD.yaml"
+URL_DEFAULT="${GH_RAW}/016390aaaaa-cmyk/TestMy/refs/heads/main/files/MagiTrickle/config.yaml"
+URL_ITDOG="${GH_RAW}/016390aaaaa-cmyk/TestMy/refs/heads/main/files/MagiTrickle/configAD.yaml"
+EXCLUDE_URL="${GH_RAW}/016390aaaaa-cmyk/TestMy/refs/heads/main/zapret-hosts-user-exclude.txt"
 
 PORTS_UDP="88,1024-2407,2409-4499,4502-19293,19345-49999,50101-65535"; PORTS_TCP="2099,2802,2302,2502,3478-3480,3724,6000-8000,8085,8090,8100,8903,8904,25565,27015-27030,27036-27037,35500-35600,50001,60442"
 
@@ -59,7 +59,7 @@ FINAL_STR="$TMP_SF/StrFINAL.txt"; NEW_STR="$TMP_SF/StrNEW.txt"; OLD_STR="$TMP_SF
 ARCH_FULL="$(cat /etc/openwrt_release | grep DISTRIB_ARCH | cut -d"'" -f2)"; MODEL="$(cat /tmp/sysinfo/model 2>/dev/null)"
 RES1="/opt/zapret/tmp/results_flowseal.txt"; RES2="/opt/zapret/tmp/results_versions.txt"; RES3="/opt/zapret/tmp/results_all.txt"
 LUCI_EDITION="/usr/libexec/rpcd/zapret-manager"
-ZM_LUCI_URL="${GH_RAW}/StressOzz/Zapret-Manager/main/ZapretManager_LuCI.sh"; ZM_LUCI_CACHE="/tmp/zm_luci_latest"; ZM_YV_OFF="/opt/zapret-manager-luci/yv_off"; ZM_DV_OFF="/opt/zapret-manager-luci/dv_off"
+ZM_LUCI_URL="${GH_RAW}/016390aaaaa-cmyk/TestMy/main/ZapretManager_LuCI.sh"; ZM_LUCI_CACHE="/tmp/zm_luci_latest"; ZM_YV_OFF="/opt/zapret-manager-luci/yv_off"; ZM_DV_OFF="/opt/zapret-manager-luci/dv_off"
 zm_luci_inst_ver() { sed -n 's/^ZM_VERSION="\([^"]*\)".*/\1/p' /opt/zapret-manager-luci/backend.sh 2>/dev/null | head -n1; }
 zm_luci_last_ver() { if [ ! -e "$ZM_LUCI_CACHE" ] || [ -n "$(find "$ZM_LUCI_CACHE" -mmin +30 2>/dev/null)" ]; then { curl -fsSL --connect-timeout 3 --max-time 6 -r 0-400 "$ZM_LUCI_URL" 2>/dev/null || wget -q -T 6 -O - "$ZM_LUCI_URL" 2>/dev/null; } | sed -n 's/^# Version:[[:space:]]*//p' | head -n1 | tr -d '\r ' > "$ZM_LUCI_CACHE"; fi; cat "$ZM_LUCI_CACHE" 2>/dev/null; }
 zm_ver_gt() { awk -v a="$1" -v b="$2" 'BEGIN { n = split(a, x, "."); m = split(b, y, "."); k = (n > m ? n : m); for (i = 1; i <= k; i++) { if (x[i] + 0 > y[i] + 0) exit 0; if (x[i] + 0 < y[i] + 0) exit 1 } exit 1 }'; }
@@ -313,9 +313,9 @@ echo -e "${CYAN}Устанавливаем ${NC}Zapret2"; $INSTALL "$ZAPRET2_TMP
 rm -rf "$ZAPRET2_TMP_DIR"; echo -e "${CYAN}Добавляем домены в исключения${NC}"; wget -q -U "Mozilla/5.0" -O /opt/zapret2/ipset/zapret_hosts_user_exclude.txt "$EXCLUDE_URL" || echo -e "${RED}Не удалось загрузить exclude файл${NC}"
 # echo -e "${CYAN}Включаем стратегию по умолчанию${NC}"; sed -i "/config strategy 'default'/,/config /s/option enabled '0'/option enabled '1'/" /etc/config/zapret2 >/dev/null 2>&1
 echo -e "${CYAN}Настраиваем стратегии${NC}"
-wget -q -U "Mozilla/5.0" -O /opt/zapret2/init.d/openwrt/custom.d/50-discord_media.sh "https://raw.githubusercontent.com/StressOzz/Zapret-Manager/refs/heads/main/files/Zapret2/50-discord_media.sh" || echo -e "${RED}Не удалось загрузить ${NC}50-discord_media.sh"
-if [ -f "$ZAPRET2_CONFIG_BACKUP" ]; then cp -f "$ZAPRET2_CONFIG_BACKUP" /etc/config/zapret2; else wget -q -U "Mozilla/5.0" -O /etc/config/zapret2 "https://raw.githubusercontent.com/StressOzz/Zapret-Manager/refs/heads/main/files/Zapret2/zapret2" || echo -e "${RED}Не удалось загрузить ${NC}zapret2"; fi; rm -f "$ZAPRET2_CONFIG_BACKUP"
-wget -q -U "Mozilla/5.0" -O /opt/zapret2/ipset/zapret_hosts_discord.txt "https://raw.githubusercontent.com/StressOzz/Zapret-Manager/refs/heads/main/files/Zapret2/zapret_hosts_discord.txt" || echo -e "${RED}Не удалось загрузить ${NC}zapret_hosts_discord.txt"
+wget -q -U "Mozilla/5.0" -O /opt/zapret2/init.d/openwrt/custom.d/50-discord_media.sh "https://raw.githubusercontent.com/016390aaaaa-cmyk/TestMy/refs/heads/main/files/Zapret2/50-discord_media.sh" || echo -e "${RED}Не удалось загрузить ${NC}50-discord_media.sh"
+if [ -f "$ZAPRET2_CONFIG_BACKUP" ]; then cp -f "$ZAPRET2_CONFIG_BACKUP" /etc/config/zapret2; else wget -q -U "Mozilla/5.0" -O /etc/config/zapret2 "https://raw.githubusercontent.com/016390aaaaa-cmyk/TestMy/refs/heads/main/files/Zapret2/zapret2" || echo -e "${RED}Не удалось загрузить ${NC}zapret2"; fi; rm -f "$ZAPRET2_CONFIG_BACKUP"
+wget -q -U "Mozilla/5.0" -O /opt/zapret2/ipset/zapret_hosts_discord.txt "https://raw.githubusercontent.com/016390aaaaa-cmyk/TestMy/refs/heads/main/files/Zapret2/zapret_hosts_discord.txt" || echo -e "${RED}Не удалось загрузить ${NC}zapret_hosts_discord.txt"
 echo -e "${CYAN}Запускаем ${NC}Zapret2"; /etc/init.d/zapret2 enable >/dev/null 2>&1; /etc/init.d/zapret2 restart >/dev/null 2>&1; echo -e "Zapret2 ${GREEN}установлен!${NC}\n"; PAUSE; }
 remove_zapret2() { echo -e "\n${MAGENTA}Удаляем Zapret2${NC}"; echo -e "${CYAN}Останавливаем ${NC}zapret2"; /etc/init.d/zapret2 stop >/dev/null 2>&1
 echo -e "${CYAN}Удаляем пакеты${NC}"; $DELETE luci-app-zapret2 >/dev/null 2>&1; $DELETE zapret2 >/dev/null 2>&1; echo -e "${CYAN}Удаляем файлы${NC}"; rm -f /etc/config/zapret2; rm -rf /opt/zapret2; echo -e "Zapret2 ${GREEN}удалён!${NC}\n"; PAUSE; }
@@ -950,8 +950,8 @@ uci -q delete uhttpd.zmweb && uci -q commit uhttpd
 /etc/init.d/rpcd restart >/dev/null 2>&1
 /etc/init.d/uhttpd restart >/dev/null 2>&1 ;;
 esac
-echo "sh <(wget -q -O - ${GH_RAW}/StressOzz/Zapret-Manager/main/Zapret-Manager.sh)" > /usr/bin/zms; chmod +x /usr/bin/zms
-echo "sh <(wget -q -O - ${GH_RAW}/StressOzz/Zapret-Manager/main/ZapretManager_LuCI.sh)" > /usr/bin/zmw; chmod +x /usr/bin/zmw
+echo "sh <(wget -q -O - ${GH_RAW}/016390aaaaa-cmyk/TestMy/main/Zapret-Manager.sh)" > /usr/bin/zms; chmod +x /usr/bin/zms
+echo "sh <(wget -q -O - ${GH_RAW}/016390aaaaa-cmyk/TestMy/main/ZapretManager_LuCI.sh)" > /usr/bin/zmw; chmod +x /usr/bin/zmw
 rm -f "$ZM_LUCI_CACHE"
 ZMU_FREE="$(df -k /overlay 2>/dev/null | awk 'NR==2 {print $4}')"; [ -n "$ZMU_FREE" ] || ZMU_FREE="$(df -k / 2>/dev/null | awk 'NR==2 {print $4}')"
 echo -e "Zapret Manager ${GREEN}для ${NC}WEB ${GREEN}+ ${NC}LuCI ${GREEN}удалён!${NC}${ZMU_FREE:+ ${CYAN}Свободно на флеше: ${NC}$ZMU_FREE КБ}\n"
@@ -1015,9 +1015,9 @@ grep -q '104\.25\.158\.178 finland[0-9]\{5\}\.discord\.media' /etc/hosts && echo
 echo -ne "${CYAN}Enter) ${GREEN}Вернуться в предыдущее меню${NC}\n\n${YELLOW}Выберите пункт:${NC} ";read -r c; case "$c" in 0) toggle_block "$NALOG";; 1) toggle_block "$RUTOR";; 2) toggle_block "$NTC";; 3) toggle_block "$INSTAGRAM";;
 4) toggle_block "$LIBRUSEC";; 5) toggle_block "$AI";; 6) toggle_block "$TWCH";; 7) toggle_block "$TGWeb";; 8) toggle_block "$SPFY";; 9) toggle_block "$SPFYEXT";; 10) toggle_block "$SCell";; 11) toggle_block "$GITH_RAW";; 12) toggle_block "$GITH";;
 13) toggle_block "$USoft";; 14) toggle_block "$TAPEop";; 15) toggle_block "$ROBLOXhost";; 16) toggle_block "$updDIShost";; 17) toggle_all;; 18) menu_GEO_HOSTS;;
-19) echo -e "\n${MAGENTA}Заменяем hosts на Mafioznik hosts${NC}"; wget -qO /etc/hosts ${GH_RAW}/StressOzz/Zapret-Manager/refs/heads/main/files/hosts_mafioznik.txt >/dev/null 2>&1 || { echo -e "\n${RED}Не удалось скачать файл hosts${NC}\n"; PAUSE; }
+19) echo -e "\n${MAGENTA}Заменяем hosts на Mafioznik hosts${NC}"; wget -qO /etc/hosts ${GH_RAW}/016390aaaaa-cmyk/TestMy/refs/heads/main/files/hosts_mafioznik.txt >/dev/null 2>&1 || { echo -e "\n${RED}Не удалось скачать файл hosts${NC}\n"; PAUSE; }
 /etc/init.d/dnsmasq restart >/dev/null 2>&1; echo -e "hosts ${GREEN}заменён на ${NC}Mafioznik hosts${GREEN}!${NC}\n"; PAUSE;; 20) echo -e "\n${MAGENTA}Заменяем hosts на Malw.link hosts${NC}"
-wget -qO /etc/hosts ${GH_RAW}/StressOzz/Zapret-Manager/refs/heads/main/files/hosts_malw.link.txt >/dev/null 2>&1 || { echo -e "\n${RED}Не удалось скачать файл hosts${NC}\n"; PAUSE; }
+wget -qO /etc/hosts ${GH_RAW}/016390aaaaa-cmyk/TestMy/refs/heads/main/files/hosts_malw.link.txt >/dev/null 2>&1 || { echo -e "\n${RED}Не удалось скачать файл hosts${NC}\n"; PAUSE; }
 /etc/init.d/dnsmasq restart >/dev/null 2>&1; echo -e "hosts ${GREEN}заменён на ${NC}Malw.link hosts${GREEN}!${NC}\n"; PAUSE;; 
 21) toggle_finland_hosts;;
 22) hosts_reset;; *) break;; esac; done; }
@@ -1098,7 +1098,7 @@ EOF
 if test_interrupted; then kill_bg_jobs "$TMP_PIDS"; else wait; fi; OK=$(wc -l < "$TMP_OK" | tr -d ' '); rm -f "$TMP_OK" "$TMP_PIDS"; }
 prepare_urls() { : > "$OUT_DPI"; printf '%s\n' "gosuslugi.ru|https://www.gosuslugi.ru" "esia.gosuslugi.ru|https://esia.gosuslugi.ru" "nalog.ru|https://nalog.ru" "lkfl2.nalog.ru|https://lkfl2.nalog.ru" "rutube.ru|https://rutube.ru" "ntc.party|https://ntc.party/" "instagram.com|https://instagram.com" "facebook.com|https://facebook.com" "rutor.info|https://rutor.info" "rutracker.org|https://rutracker.org" \
 "epidemz.net.co|https://epidemz.net.co" "nnmclub.to|https://nnmclub.to" "openwrt.org|https://openwrt.org" "sxyprn.net|https://sxyprn.net" "spankbang.com|https://ru.spankbang.com" "pornhub.com|https://pornhub.com" "discord.com|https://discord.com" "x.com|https://x.com" "filmix.my|https://filmix.my" "forum.ru-board.com|https://forum.ru-board.com" "play.google.com|https://play.google.com" \
-"anitokyo.tv|https://anitokyo.tv" "cub.red|https://cub.red" "downloads.openwrt.org|https://downloads.openwrt.org" "githubusercontent.com|https://raw.githubusercontent.com/StressOzz/Zapret-Manager/refs/heads/main/Zapret-Manager.sh" >> "$OUT_DPI"
+"anitokyo.tv|https://anitokyo.tv" "cub.red|https://cub.red" "downloads.openwrt.org|https://downloads.openwrt.org" "githubusercontent.com|https://raw.githubusercontent.com/016390aaaaa-cmyk/TestMy/refs/heads/main/Zapret-Manager.sh" >> "$OUT_DPI"
 curl -fsSL "$RAW" | sed -n 's/.*"id":[[:space:]]*"\([^"]*\)".*"host":[[:space:]]*"\([^"]*\)".*/\1|\2/p' >> "$OUT_DPI" || { echo -e "\n${RED}Ошибка загрузки DPI списка${NC}\n"; PAUSE; return 1; }; TOTAL=$(grep -c "|" "$OUT_DPI"); }
 check_current_strategy() { clear; echo -e "${MAGENTA}Тестирование текущей стратегии${NC}\n"; prepare_urls; URLS="$(cat "$OUT_DPI")"; OK=0; URLS="$(cat "$OUT_DPI")"; TOTAL=$(grep -c "|" "$OUT_DPI"); echo -e "${CYAN}Доменов для теста:${NC} $TOTAL\n"; LOG_TMP="/tmp/zapret_log_${CUR}"; : > "$LOG_TMP"
 check_all_urls; if [ "$OK" -eq "$TOTAL" ]; then COLOR="${GREEN}"; elif [ "$OK" -ge $((TOTAL/2)) ]; then COLOR="${YELLOW}"; else COLOR="${RED}"; fi; echo -e "\n${CYAN}Результат теста: ${COLOR}$OK/$TOTAL${NC}"
@@ -1555,7 +1555,7 @@ read -r SUB_URL; SUB_URL="$(echo "$SUB_URL" | sed 's/^[[:space:]]*//;s/[[:space:
 if grep -q "^[[:space:]]*option subscription_url" /etc/config/netshift; then echo -e "${CYAN}Меняем подписку${NC}"; sed -i "s|^[[:space:]]*option subscription_url.*|	option subscription_url '$SUB_URL'|" /etc/config/netshift; else echo -e "\n${CYAN}Меняем конфигурацию в ${NC}NetShift${NC}"
 printf "%s\n" "config settings 'settings'" "option dns_type 'udp'" "option dns_server '9.9.9.9'" "option bootstrap_dns_server '77.88.8.8'" "option dns_rewrite_ttl '60'" "list source_network_interfaces 'br-lan'" "option enable_output_network_interface '0'" "option enable_badwan_interface_monitoring '0'" "option enable_yacd '0'" > /etc/config/netshift
 printf "%s\n" "option disable_quic '0'" "option update_interval '1d'" "option download_lists_via_proxy '1'" "option dont_touch_dhcp '0'" "option config_path '/etc/sing-box/config.json'" "option cache_path '/tmp/sing-box/cache.db'" "option log_level 'panic'" "option exclude_ntp '0'" "option shutdown_correctly '0'" >> /etc/config/netshift
-printf "%s\n" "option dns_via_outbound '0'" "option block_doh '0'" "option enable_ipv6 '0'" "" "config section 'StressKVN'" "option connection_type 'proxy'" "option proxy_config_type 'subscription'" "option subscription_url '$SUB_URL'" "option subscription_insecure '0'" "option subscription_update_interval '1h'" >> /etc/config/netshift
+printf "%s\n" "option dns_via_outbound '0'" "option block_doh '0'" "option enable_ipv6 '0'" "" "config section 'VPN'" "option connection_type 'proxy'" "option proxy_config_type 'subscription'" "option subscription_url '$SUB_URL'" "option subscription_insecure '0'" "option subscription_update_interval '1h'" >> /etc/config/netshift
 printf "%s\n" "option subscription_group_by_countries '0'" "option urltest_check_interval '3m'" "option urltest_tolerance '100'" "option urltest_testing_url 'https://www.gstatic.com/generate_204'" "option enable_udp_over_tcp '0'" "option global_proxy '0'" "list community_lists 'geoblock'" "list community_lists 'block'" >> /etc/config/netshift
 printf "%s\n" "list community_lists 'porn'" "list community_lists 'news'" "list community_lists 'anime'" "list community_lists 'discord'" "list community_lists 'meta'" "list community_lists 'twitter'" "list community_lists 'hdrezka'" "list community_lists 'tiktok'" "list community_lists 'telegram'" "list community_lists 'cloudflare'" >> /etc/config/netshift
 printf "%s\n" "list community_lists 'google_ai'" "list community_lists 'google_play'" "list community_lists 'hodca'" "list community_lists 'roblox'" "list community_lists 'hetzner'" "list community_lists 'ovh'" "list community_lists 'digitalocean'" "list community_lists 'cloudfront'" "option user_domain_list_type 'disabled'" >> /etc/config/netshift
@@ -1819,9 +1819,9 @@ echo -e "\n${CYAN}1) ${GREEN}Установить ${NC}Mixomo"; echo -e "${CYAN}
 then echo -e "${CYAN}4) ${GREEN}Сменить ${NC}VPN${GREEN} подписку${NC}"; else echo -e "${CYAN}4) ${GREEN}Интегрировать ${NC}VPN${GREEN} подписку в ${NC}Mihomo${NC}"; fi; echo -e "${CYAN}5) ${GREEN}Сгенерировать ${NC}WARP"
 echo -e "${CYAN}6) ${GREEN}Интегрировать ${NC}/root/WARP.conf${GREEN} в ${NC}Mihomo"; echo -e "${CYAN}7) ${GREEN}Выбрать и установить панель для ${NC}Mihomo"; if grep -qF "/etc/init.d/mihomo restart" /etc/crontabs/root 2>/dev/null
 then echo -e "${CYAN}8) ${GREEN}Выключить автоперезапуск ${NC}Mihomo"; else echo -e "${CYAN}8) ${GREEN}Включить автоперезапуск ${NC}Mihomo"; fi; [ -n "$Magi_INSTALL_VER" ] && { [ "$Magi_INSTALL_VER" != "$MT_VERSION" ] && echo -e "${CYAN}9) ${GREEN}Обновить ${NC}MagiTrickle"; }
-echo -e "${CYAN}Enter) ${GREEN}Вернуться в предыдущее меню\n"; echo -ne "${YELLOW}Выберите пункт: ${NC}"; read choiceM; case "$choiceM" in 1) wget -q -O - ${GH_RAW}/StressOzz/Zapret-Manager/refs/heads/main/files/Mixomo/mixomo_openwrt_install.sh | sh; PAUSE ;;
-2) wget -q -O - ${GH_RAW}/StressOzz/Zapret-Manager/refs/heads/main/files/Mixomo/mixomo_openwrt_delete.sh | sh; if bt_installed && ! pkg_is_installed hev-socks5-tunnel; then echo -e "${CYAN}Возвращаем ${NC}hev-socks5-tunnel${CYAN} для ${NC}ByeTube"; $INSTALL hev-socks5-tunnel >/dev/null 2>&1; /etc/init.d/hev-socks5-tunnel disable >/dev/null 2>&1; /etc/init.d/hev-socks5-tunnel stop >/dev/null 2>&1; /etc/init.d/bytetube restart >/dev/null 2>&1; fi; sed -i "\|$CRON_CMD|d" "$CRON_FILE" >/dev/null 2>&1; /etc/init.d/cron restart >/dev/null 2>&1; echo -e "\n${YELLOW}Рекомендую сделать перезагрузку роутера!${NC}\n"; PAUSE ;;
-3) check_mihomo || continue; magitrickle_config ;; 4) check_mihomo || continue; PODPISKA ;; 5) register_warp || return 1; choose_endpoint || return 1; WARP_TO_ROOT; echo; PAUSE ;; 6) check_mihomo || continue; wget -q -O - ${GH_RAW}/StressOzz/Zapret-Manager/refs/heads/main/files/Mixomo/WARP_to_conf.sh | sh; echo; PAUSE ;;
+echo -e "${CYAN}Enter) ${GREEN}Вернуться в предыдущее меню\n"; echo -ne "${YELLOW}Выберите пункт: ${NC}"; read choiceM; case "$choiceM" in 1) wget -q -O - ${GH_RAW}/016390aaaaa-cmyk/TestMy/refs/heads/main/files/Mixomo/mixomo_openwrt_install.sh | sh; PAUSE ;;
+2) wget -q -O - ${GH_RAW}/016390aaaaa-cmyk/TestMy/refs/heads/main/files/Mixomo/mixomo_openwrt_delete.sh | sh; if bt_installed && ! pkg_is_installed hev-socks5-tunnel; then echo -e "${CYAN}Возвращаем ${NC}hev-socks5-tunnel${CYAN} для ${NC}ByeTube"; $INSTALL hev-socks5-tunnel >/dev/null 2>&1; /etc/init.d/hev-socks5-tunnel disable >/dev/null 2>&1; /etc/init.d/hev-socks5-tunnel stop >/dev/null 2>&1; /etc/init.d/bytetube restart >/dev/null 2>&1; fi; sed -i "\|$CRON_CMD|d" "$CRON_FILE" >/dev/null 2>&1; /etc/init.d/cron restart >/dev/null 2>&1; echo -e "\n${YELLOW}Рекомендую сделать перезагрузку роутера!${NC}\n"; PAUSE ;;
+3) check_mihomo || continue; magitrickle_config ;; 4) check_mihomo || continue; PODPISKA ;; 5) register_warp || return 1; choose_endpoint || return 1; WARP_TO_ROOT; echo; PAUSE ;; 6) check_mihomo || continue; wget -q -O - ${GH_RAW}/016390aaaaa-cmyk/TestMy/refs/heads/main/files/Mixomo/WARP_to_conf.sh | sh; echo; PAUSE ;;
 7) check_mihomo || continue; UI_INSTALL ;; 8) check_mihomo || continue; MIXOMO_RESTART ;; 9) check_mihomo || continue; ARCH_MT=$(grep "^OPENWRT_ARCH=" /etc/os-release | cut -d'"' -f2); FILE_MT="/tmp/magitrickle.$RAZ"; URL_MT="${GH_MAIN}/MagiTrickle/MagiTrickle/releases/download/${MT_VERSION}/magitrickle_${MT_VERSION}-${SUF_MT}1_openwrt_${ARCH_MT}.$RAZ"
 echo -e "\n${MAGENTA}Обновляем MagiTrickle\n${CYAN}Скачиваем\n${NC}$URL_MT"; curl -Lf --connect-timeout 6 --retry 3 --retry-delay 1 -o "$FILE_MT" "$URL_MT" >/dev/null 2>&1 || { echo -e "\n${RED}Ошибка скачивания${NC}\n"; PAUSE; return 1; };  update_packages || return 1
 echo -e "${CYAN}Обновляем ${NC}MagiTrickle"; $INSTALL "$FILE_MT" >/dev/null 2>&1 || { echo -e "\n${RED}Ошибка установки${NC} $(basename "$URL_MT")\n"; rm -f "$FILE_MT"; PAUSE; return 1; }; /etc/init.d/magitrickle enable >/dev/null 2>&1; /etc/init.d/magitrickle restart >/dev/null 2>&1; echo -e "MagiTrickle ${GREEN}обновлён!${NC}\n"; rm -f "$FILE_MT"; PAUSE ;; *) return ;; esac; done; }
@@ -2002,7 +2002,7 @@ MENU_ZAPRET() {
         *) return ;; esac
     done
 }
-show_menu() { get_versions; get_doh_status; show_current_strategy; RKN_Check; mkdir -p "$TMP_SF"; CURR=$(curr_MIR); clear; echo -e "╔═══════════════════════════════╗\n║  ${BLUE}Zapret Manager by StressOzz${NC}  ║\n╚═══════════════════════════════╝\n${DGRAY}тгк:@${NC}stressozz_manager${DGRAY} - заходи !\n${NC}StressKVN${DGRAY}-${DGRAY}VPN для всех устройств!${NC}\n"
+show_menu() { get_versions; get_doh_status; show_current_strategy; RKN_Check; mkdir -p "$TMP_SF"; CURR=$(curr_MIR); clear; echo -e "╔═══════════════════════════════╗\n║  ${BLUE}Zapret Manager${NC}  ║\n╚═══════════════════════════════╝\n"
 echo -e "Используйте ${GREEN}WEB${NC} версию! Установка через ${GREEN}w${NC}!\n${RED}Версиия для SSH не совместима с WEB и LuCI!${NC}\n"
 if [ -f /etc/init.d/zapret ] && [ -f "$CONF" ] && grep -Eq "^[[:space:]]*option DISABLE_IPV6 '1'" "$CONF" && ping -6 -c 1 -W 2 google.com >/dev/null 2>&1; then echo -e "${RED}Обнаружен IPv6! ${GREEN}Включите ${NC}IPv6${GREEN} в системном меню!${NC}\n"; fi
 if [ ! -f /etc/init.d/zapret2 ]; then Z2_ACTION_TEXT="Установить"; Z2_ACTION_FUNC="install_zapret2"; elif [ "$INSTALLED_VER2" = "$ZAPRET2_VERSION" ]; then Z2_ACTION_TEXT="Удалить"; Z2_ACTION_FUNC="remove_zapret2"; else Z2_ACTION_TEXT="Обновить"; Z2_ACTION_FUNC="install_zapret2"; fi

@@ -1,6 +1,6 @@
 #!/bin/sh
 GREEN="\033[1;32m"; CYAN="\033[1;36m"; YELLOW="\033[1;33m"; MAGENTA="\033[1;35m"; NC="\033[0m"; DGRAY="\033[38;5;244m"
-ZMS_URL="https://raw.githubusercontent.com/StressOzz/Zapret-Manager/refs/heads/main/ZapretManager_LuCI.sh"
+ZMS_URL="https://raw.githubusercontent.com/016390aaaaa-cmyk/TestMy/refs/heads/main/ZapretManager_LuCI.sh"
 ZMS_MIRRORS="gh-proxy.org ghfast.top gh.llkk.cc ghproxy.net"
 ZMS_SRC="/tmp/zm-select-full.sh"
 ZMS_STATE="/opt/zapret-manager-luci/state"

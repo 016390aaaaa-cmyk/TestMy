@@ -4,51 +4,14 @@
 
 **Одна панель для обхода блокировок на роутере OpenWrt — Zapret, Steer, Forkozz, ByeTube, Mixomo, TG WS Proxy, AmneziaWG, DoH, блокировка рекламы и hosts в одном месте.**
 
-[![StressKVN](https://img.shields.io/badge/StressKVN-обход_белых_списков-3C3489?style=for-the-badge)](http://stresskvn.lol/)
-[![Telegram](https://img.shields.io/badge/Telegram-сообщество-2CA5E0?style=for-the-badge&logo=telegram&logoColor=white)](https://t.me/stressozz_manager)
 
-[![Views](https://gitviews.com/repo/StressOzz/Zapret-Manager.svg?style=for-the-badge&label=Views&label-color=%23555&color=%2310B981&base=559060)](https://github.com/StressOzz/Zapret-Manager)
-[![Stars](https://img.shields.io/github/stars/StressOzz/Zapret-Manager?style=for-the-badge&color=38BDF8)](https://github.com/StressOzz/Zapret-Manager/stargazers)
+[![Views](https://gitviews.com/repo/016390aaaaa-cmyk/TestMy.svg?style=for-the-badge&label=Views&label-color=%23555&color=%2310B981&base=559060)](https://github.com/016390aaaaa-cmyk/TestMy)
+[![Stars](https://img.shields.io/github/stars/016390aaaaa-cmyk/TestMy?style=for-the-badge&color=38BDF8)](https://github.com/016390aaaaa-cmyk/TestMy/stargazers)
 
 </div>
 
 ---
 
-### StressKVN — умный VPN для стабильного доступа в любых условиях
-
-- ✅ Работает даже при жёсткой фильтрации и белых списках
-- 🌍 Умная маршрутизация: зарубежные ресурсы идут через VPN, российские — напрямую
-- 📶 Подходит для роутеров на **OpenWrt**: настраивается один раз и работает для всех устройств в сети
-- 🧩 Подключается в **Zapret Manager**
-- ▶️ YouTube без рекламы
-- ⚡ Высокая скорость и безлимитный трафик
-- 🎁 Бесплатный тест на 3 дня
-
-👉 Подробнее: **[StressKVN на GitHub](https://github.com/StressOzz/StressKVN)**
-
----
-
-#### Нужен обход на компьютере с Windows, без роутера? Используйте **[ZapretOzz](https://github.com/StressOzz/ZapretOzz)**
-
----
-<div align="center">
-<table>
-  <tr>
-    <td>
-      <a href="https://github.com/StressOzz#-поддержать-проект">
-        <img width="280" height="130" src="https://github.com/user-attachments/assets/2999757b-fbf3-4149-bf6c-48bf3e241529">
-      </a>
-    </td>
-    <td>
-      <a href="https://github.com/StressOzz/StressKVN">
-        <img width="280" height="130" alt="image" src="https://github.com/user-attachments/assets/519a126e-bd39-4f46-8a09-3f0d6e1dd8af">
-      </a>
-    </td>
-  </tr>
-</table>
-</div>
-
----
 
 <div align="center">
 <a href="docs/screenshots/dashboard.png"><img src="docs/screenshots/dashboard.png" alt="Zapret Manager — Дашборд" width="900"></a>
@@ -97,7 +60,7 @@
 
 ### ⚡ Самый короткий путь
 
-1. **Windows:** скачайте и запустите [`ZapretManager_Install.bat`](https://github.com/StressOzz/Zapret-Manager/releases/tag/ZapretManager_LuCI%2BWEB). Другие системы — [одна команда через SSH](#-установка). Мало места на флеше — [установка с выбором](#-установка-на-роутере-с-нехваткой-места).
+1. **Windows:** скачайте и запустите [`ZapretManager_Install.bat`](https://github.com/016390aaaaa-cmyk/TestMy/releases/tag/ZapretManager_LuCI%2BWEB). Другие системы — [одна команда через SSH](#-установка). Мало места на флеше — [установка с выбором](#-установка-на-роутере-с-нехваткой-места).
 2. Откройте в браузере **`http://192.168.1.1:7788`**, войдите с логином и паролем роутера и примите условия использования (один раз).
 3. Раздел **Zapret** → **«Установить и настроить»**. Готово.
 
@@ -203,25 +166,7 @@
   - [Настройка OpenWrt](#️-настройка-openwrt)
   - [Система](#️-система)
   - [Компоненты панели](#-компоненты-панели)
-  - [Спасибо и поддержка](#️-спасибо-и-поддержка)
-
-**Для любопытных и продвинутых:**
-- [Совместимость компонентов](#-совместимость-компонентов)
-- [Техническая документация](#️-техническая-документация-для-продвинутых)
-  - [Архитектура](#архитектура)
-  - [Web UI изнутри](#web-ui-изнутри)
-  - [API: объект ubus `zapret-manager`](#api-объект-ubus-zapret-manager)
-  - [Фоновые задания](#фоновые-задания)
-  - [Расписания (cron)](#расписания-cron)
-  - [Файлы и каталоги](#файлы-и-каталоги)
-  - [Обновление панели](#обновление-панели)
-  - [Формат резервной копии `.zmb`](#формат-резервной-копии-zmb)
-  - [Безопасность](#безопасность)
-  - [Диагностика из SSH](#диагностика-из-ssh)
-- [Удаление](#️-удаление)
-- [Благодарности](#-благодарности)
-
-> **Как читать разделы.** У каждого раздела сначала идёт объяснение **простыми словами**, а потом подробности. У каждой функции указано, **что она делает** и *зачем это нужно*. Подробности можно пропускать — для обычной работы хватает первых абзацев.
+  - [Благодарности](#️-благодарности)
 
 ---
 
@@ -316,7 +261,7 @@
 Ничего вводить не нужно — ни команд, ни программ вроде PuTTY.
 
 1. Скачайте **`ZapretManager_Install.bat`** со страницы релиза:
-   👉 **[Скачать установщик для Windows](https://github.com/StressOzz/Zapret-Manager/releases/tag/ZapretManager_LuCI%2BWEB)** (раздел **Assets** внизу страницы).
+   👉 **[Скачать установщик для Windows](https://github.com/016390aaaaa-cmyk/TestMy/releases/tag/ZapretManager_LuCI%2BWEB)** (раздел **Assets** внизу страницы).
 2. Компьютер должен быть подключён к роутеру (по Wi-Fi или кабелю).
 3. **Дважды щёлкните** по скачанному файлу.
 4. Установщик **сам найдёт роутер** в сети (или спросит его адрес), подключится к нему, а если на роутере стоит пароль — попросит его ввести (при вводе он не виден — это нормально).
@@ -390,7 +335,7 @@ ssh root@192.168.1.1
 Скопируйте эту строку, вставьте в окно SSH (в Windows-терминале — **правой кнопкой мыши** или `Ctrl+V`) и нажмите **Enter**:
 
 ```sh
-sh <(wget -qO - https://raw.githubusercontent.com/StressOzz/Zapret-Manager/main/ZapretManager_LuCI.sh)
+sh <(wget -qO - https://raw.githubusercontent.com/016390aaaaa-cmyk/TestMy/main/ZapretManager_LuCI.sh)
 ```
 
 Установщик всё сделает сам и будет писать по-русски, что происходит. Зелёные галочки `✓` — шаг выполнен, жёлтые `!` — предупреждение (обычно не страшно, там написано, что делать).
@@ -401,7 +346,7 @@ sh <(wget -qO - https://raw.githubusercontent.com/StressOzz/Zapret-Manager/main/
 Если команда сразу заканчивается без вывода или пишет ошибку скачивания, у провайдера, скорее всего, не открывается `raw.githubusercontent.com`. Скачайте установщик через зеркало — это тот же файл:
 
 ```sh
-sh <(wget -qO - https://gh-proxy.org/https://raw.githubusercontent.com/StressOzz/Zapret-Manager/main/ZapretManager_LuCI.sh)
+sh <(wget -qO - https://gh-proxy.org/https://raw.githubusercontent.com/016390aaaaa-cmyk/TestMy/main/ZapretManager_LuCI.sh)
 ```
 
 Не сработало — замените `gh-proxy.org` на `ghfast.top`, `gh.llkk.cc` или `ghproxy.net`. После установки панель сама переходит на зеркала, когда GitHub не отвечает (**Система → Доступ к GitHub**).
@@ -411,7 +356,7 @@ sh <(wget -qO - https://gh-proxy.org/https://raw.githubusercontent.com/StressOzz
 > [!TIP]
 > **Мало места на флеше?** Вместо этой команды запустите установщик с выбором — он покажет размер каждой страницы и спросит, где держать панель: на флеше или в оперативной памяти. Подробно, по шагам — в разделе [📦 Установка на роутере с нехваткой места](#-установка-на-роутере-с-нехваткой-места).
 > ```sh
-> sh <(wget -qO - https://raw.githubusercontent.com/StressOzz/Zapret-Manager/main/ZapretManager_Select.sh)
+> sh <(wget -qO - https://raw.githubusercontent.com/016390aaaaa-cmyk/TestMy/main/ZapretManager_Select.sh)
 > ```
 
 *Зачем вообще SSH:* установщику нужно записать файлы в систему роутера и настроить службы — через браузер это сделать нельзя. Нужно это только один раз: обновления потом ставятся кнопкой в панели.
@@ -438,7 +383,7 @@ Web UI: http://192.168.1.1:7788
   <sub>Экран входа. Галочка «Запомнить на этом устройстве» — чтобы не вводить пароль каждый раз.</sub>
 </p>
 
-При **первом входе** панель покажет **условия использования**: слева — коротко о главном, справа — полный текст. Отметьте «Я прочитал(а) условия и принимаю их» и нажмите **«Принимаю и продолжаю»** — откроется страница «Спасибо и поддержка», дальше панель работает как обычно. Экран показывается **один раз** на каждом роутере — обновления и переустановка его не возвращают. Перечитать условия можно в **Сервис → Система**.
+При **первом входе** панель покажет **условия использования**: слева — коротко о главном, справа — полный текст. Отметьте «Я прочитал(а) условия и принимаю их» и нажмите **«Принимаю и продолжаю»** — откроется страница «Благодарности», дальше панель работает как обычно. Экран показывается **один раз** на каждом роутере — обновления и переустановка его не возвращают. Перечитать условия можно в **Сервис → Система**.
 
 <p align="center">
   <a href="docs/screenshots/terms.png"><img src="docs/screenshots/terms.png" alt="Условия использования" width="820"></a><br>
@@ -448,7 +393,7 @@ Web UI: http://192.168.1.1:7788
 Всё — панель готова. Теперь переходите к разделу [🏁 Первые шаги после установки](#-первые-шаги-после-установки).
 
 > [!NOTE]
-> **Какие данные отправляет панель.** Личные данные не собираются. Для счётчика установок роутер изредка отправляет автору **случайный номер установки и версию панели** — без адресов, имён и настроек. Отключить: создайте файл `touch /etc/zapret-manager.nostats`.
+> **Какие данные отправляет панель.** Панель не собирает и не отправляет никакие данные.
 
 > [!NOTE]
 > **Не открывается `192.168.1.1:7788`?** Подставьте адрес вашего роутера — установщик пишет его в последней строке (`Web UI: http://…`). Панель открывается **только из домашней сети**: с мобильного интернета или через VPN на телефоне не откроется. Если не помогло — см. [«Web UI не открывается на порту 7788»](#-частые-проблемы).
@@ -501,7 +446,7 @@ df -h /overlay /tmp
 **2. Вставьте команду и нажмите Enter:**
 
 ```sh
-sh <(wget -qO - https://raw.githubusercontent.com/StressOzz/Zapret-Manager/main/ZapretManager_Select.sh)
+sh <(wget -qO - https://raw.githubusercontent.com/016390aaaaa-cmyk/TestMy/main/ZapretManager_Select.sh)
 ```
 
 Установщик скачает полную версию панели (не ответил GitHub — сам попробует зеркала), проверит, что файл скачался целиком, и посчитает размер каждой страницы. **На роутере пока ничего не меняется** — до самого конца можно нажать `q` и выйти.
@@ -583,10 +528,10 @@ sh <(wget -qO - https://raw.githubusercontent.com/StressOzz/Zapret-Manager/main/
 
 ```sh
 # обычный установщик — без меню, ставит все страницы
-sh <(wget -qO - https://raw.githubusercontent.com/StressOzz/Zapret-Manager/main/ZapretManager_LuCI.sh) light
+sh <(wget -qO - https://raw.githubusercontent.com/016390aaaaa-cmyk/TestMy/main/ZapretManager_LuCI.sh) light
 
 # установщик с выбором — меню страниц будет, а на втором экране сразу отмечен нужный вариант
-sh <(wget -qO - https://raw.githubusercontent.com/StressOzz/Zapret-Manager/main/ZapretManager_Select.sh) light
+sh <(wget -qO - https://raw.githubusercontent.com/016390aaaaa-cmyk/TestMy/main/ZapretManager_Select.sh) light
 ```
 
 | Слово | Что сделает установщик |
@@ -617,8 +562,8 @@ sh <(wget -qO - https://raw.githubusercontent.com/StressOzz/Zapret-Manager/main/
 
 | Сообщение или ситуация | Что делать |
 |---|---|
-| «Нужен терминал, чтобы выбрать страницы» | Установщик с выбором запущен не из обычного окна SSH. Запустите так: `wget -O /tmp/zm-select.sh https://raw.githubusercontent.com/StressOzz/Zapret-Manager/main/ZapretManager_Select.sh && sh /tmp/zm-select.sh` |
-| Команда ничего не скачивает | У провайдера не открывается GitHub. Добавьте зеркало перед адресом: `sh <(wget -qO - https://gh-proxy.org/https://raw.githubusercontent.com/StressOzz/Zapret-Manager/main/ZapretManager_Select.sh)` — полную панель установщик дальше скачает через зеркала сам |
+| «Нужен терминал, чтобы выбрать страницы» | Установщик с выбором запущен не из обычного окна SSH. Запустите так: `wget -O /tmp/zm-select.sh https://raw.githubusercontent.com/016390aaaaa-cmyk/TestMy/main/ZapretManager_Select.sh && sh /tmp/zm-select.sh` |
+| Команда ничего не скачивает | У провайдера не открывается GitHub. Добавьте зеркало перед адресом: `sh <(wget -qO - https://gh-proxy.org/https://raw.githubusercontent.com/016390aaaaa-cmyk/TestMy/main/ZapretManager_Select.sh)` — полную панель установщик дальше скачает через зеркала сам |
 | «Не удалось скачать установщик» | Нет интернета на роутере или не ответили ни GitHub, ни зеркала. Проверьте `ping -c 3 ya.ru` и запустите ещё раз |
 | «Панель в оперативную память не поставить: …» / вариант `[×]` | Причина — в сообщении. Мало памяти в `/tmp` — перезагрузите роутер или уберите страницы. `no_symlinks` — выполните `uci -q delete uhttpd.main.no_symlinks; uci -q delete uhttpd.zmweb.no_symlinks; uci commit uhttpd; /etc/init.d/uhttpd restart`. Нет `tar` или `gzip` — выберите `ram` или поставьте пакеты `tar` и `gzip` |
 | После перезагрузки пропала панель | Так работает режим `ram`. Запустите команду со словом `ram` — всё вернётся |
@@ -645,12 +590,12 @@ sh <(wget -qO - https://raw.githubusercontent.com/StressOzz/Zapret-Manager/main/
 | Команда | Что делает |
 |---|---|
 | **`zmw`** | Переустанавливает / обновляет эту панель (LuCI + Web UI) — та же команда установки без слова, только короче. Если GitHub не отвечает, качает через зеркала. |
-| **`zms`** | Запускает консольную версию [Zapret-Manager.sh](https://github.com/StressOzz/Zapret-Manager) прямо в терминале — удобно, когда браузер не нужен. |
+| **`zms`** | Запускает консольную версию [Zapret-Manager.sh](https://github.com/016390aaaaa-cmyk/TestMy) прямо в терминале — удобно, когда браузер не нужен. |
 
 > [!NOTE]
-> Нужна только версия **для SSH**, без веб-панели? Описание — [**readme_ssh.md**](https://github.com/StressOzz/Zapret-Manager/blob/main/readme_ssh.md), установка:
+> Нужна только версия **для SSH**, без веб-панели? Описание — [**readme_ssh.md**](https://github.com/016390aaaaa-cmyk/TestMy/blob/main/readme_ssh.md), установка:
 > ```
-> sh <(wget -qO - 'https://raw.githubusercontent.com/StressOzz/Zapret-Manager/main/Zapret-Manager.sh')
+> sh <(wget -qO - 'https://raw.githubusercontent.com/016390aaaaa-cmyk/TestMy/main/Zapret-Manager.sh')
 > ```
 
 ---
@@ -696,7 +641,7 @@ sh <(wget -qO - https://raw.githubusercontent.com/StressOzz/Zapret-Manager/main/
 
 ### LuCI
 
-Пункт меню **Службы → Zapret Manager** в стандартной странице настроек роутера, 18 страниц: Дашборд, Zapret, Zapret2, Steer, Forkozz, Hosts, Блокировка рекламы, DNS over HTTPS, AmneziaWG, Удалённый доступ, Терминал, TG WS Proxy, Mixomo, ByeTube, Система, Монитор ресурсов, Настройка OpenWrt, Спасибо и поддержка. Страницы, убранные в [Компонентах панели](#-компоненты-панели), из меню пропадают.
+Пункт меню **Службы → Zapret Manager** в стандартной странице настроек роутера, 18 страниц: Дашборд, Zapret, Zapret2, Steer, Forkozz, Hosts, Блокировка рекламы, DNS over HTTPS, AmneziaWG, Удалённый доступ, Терминал, TG WS Proxy, Mixomo, ByeTube, Система, Монитор ресурсов, Настройка OpenWrt, Благодарности. Страницы, убранные в [Компонентах панели](#-компоненты-панели), из меню пропадают.
 
 *Зачем:* привычное место — вход тот же, что и в остальные настройки роутера.
 
@@ -735,9 +680,9 @@ sh <(wget -qO - https://raw.githubusercontent.com/StressOzz/Zapret-Manager/main/
 | **Обзор** | Дашборд |
 | **Обход блокировок** | Zapret · Zapret2 · Steer · Forkozz · ByeTube · TG WS Proxy · Mixomo |
 | **Сеть** | Hosts · Блокировка рекламы · DNS over HTTPS · AmneziaWG · Удалённый доступ · Терминал |
-| **Сервис** | Система · Оформление · Резервная копия · Монитор ресурсов · Фоновые проверки · Компоненты панели · Настройка OpenWrt · Очистка и удаление · Спасибо и поддержка · Системная информация |
+| **Сервис** | Система · Оформление · Резервная копия · Монитор ресурсов · Фоновые проверки · Компоненты панели · Настройка OpenWrt · Очистка и удаление · Благодарности · Системная информация |
 
-Шестерёнка рядом с «Обзор» — **«Настроить меню»**: лишние разделы можно скрыть. Нажатие на название группы сворачивает её. Внизу боковой панели — плеер радио, имя или модель роутера и четыре мини-шкалы: нагрузка процессора, температура, ОЗУ и флеш. Вверху справа: **StressKVN**, ссылка на **сообщество в Telegram**, ⟳ «обновить страницу», 🎨 быстрый выбор темы и живого фона и «Выйти».
+Шестерёнка рядом с «Обзор» — **«Настроить меню»**: лишние разделы можно скрыть. Нажатие на название группы сворачивает её. Внизу боковой панели — плеер радио, имя или модель роутера и четыре мини-шкалы: нагрузка процессора, температура, ОЗУ и флеш. Вверху справа: ⟳ «обновить страницу», 🎨 быстрый выбор темы и живого фона и «Выйти».
 
 </details>
 
@@ -1472,7 +1417,7 @@ sh <(wget -qO - https://raw.githubusercontent.com/StressOzz/Zapret-Manager/main/
 > **Кому нужен:** тем, кто хочет обход и на телефоне вне дома, без отдельного VPN-сервиса.
 
 > [!IMPORTANT]
-> **Не для новичков.** Ставьте, только если готовы разобраться, как настраивается Tailscale: сервер, одобрение маршрутов, приложение на телефоне. Панель ведёт по шагам, но часть шагов делается в панели сервера и на телефоне. Белые списки этот способ не обходит — для них есть [StressKVN](https://github.com/StressOzz/StressKVN).
+> **Не для новичков.** Ставьте, только если готовы разобраться, как настраивается Tailscale: сервер, одобрение маршрутов, приложение на телефоне. Панель ведёт по шагам, но часть шагов делается в панели сервера и на телефоне.
 
 Работает на [Tailscale](https://github.com/tailscale/tailscale): устройства находят друг друга через сервер, а сам трафик идёт **напрямую** между телефоном и роутером и зашифрован — сервер его не видит. Ставится уменьшенная сборка [openwrt-tailscale](https://github.com/GuNanOvO/openwrt-tailscale) и страница для LuCI с GitHub; панель заранее покажет, сколько флеш-памяти нужно.
 
@@ -1700,7 +1645,7 @@ sh <(wget -qO - https://raw.githubusercontent.com/StressOzz/Zapret-Manager/main/
 
 - **Адреса, ключи, пароли и ссылки подписок в отчёт не попадают** — его можно смело отправлять в чат поддержки.
 - Кнопки **«Скопировать отчёт»** и **«Сохранить в файл»** (текстовый файл).
-- *Зачем:* когда просите помощи в [сообществе](https://t.me/stressozz_manager), вместо десятка вопросов «а что у вас стоит?» достаточно прислать отчёт.
+- *Зачем:* отчёт сразу показывает, что у вас стоит, вместо десятка вопросов.
 
 #### 💾 Резервная копия панели
 
@@ -1752,19 +1697,11 @@ sh <(wget -qO - https://raw.githubusercontent.com/StressOzz/Zapret-Manager/main/
 
 ---
 
-### ❤️ Спасибо и поддержка
+### ❤️ Благодарности
 
-> **Простыми словами:** страница об авторе и о том, как поддержать проект.
+> **Простыми словами:** список проектов с открытым кодом, на которых построена панель.
 
-<p align="center">
-  <a href="docs/screenshots/thanks.png"><img src="docs/screenshots/thanks.png" alt="Спасибо и поддержка" width="820"></a><br>
-  <sub>Автор и ссылки, поддержка проекта по QR-коду (ТБанк и Ozon, по СБП или любой картой) и StressKVN.</sub>
-</p>
-
-- **Об авторе** — ссылки на GitHub StressOzz и сообщество в Telegram.
-- **Поддержать проект** — Zapret Manager бесплатный; если он вам помогает, можно поддержать автора через **ТБанк** или **Ozon** по QR-коду (СБП или любая карта).
-- **[StressKVN](https://github.com/StressOzz/StressKVN)** — VPN на случай, когда одного Zapret мало: работает даже при белых списках операторов и подключается к роутеру прямо из Zapret Manager.
-- **Благодарности** авторам всех проектов, на которых построена панель, и счётчик «Zapret Manager установлен на N роутерах».
+- **Благодарности** авторам всех проектов, на которых построена панель.
 
 ---
 
@@ -2048,7 +1985,7 @@ uci show uhttpd.zmweb
 Вернуть панель — та же команда со словом `ram` (настройки и расписания вернутся):
 
 ```sh
-sh <(wget -qO - https://raw.githubusercontent.com/StressOzz/Zapret-Manager/main/ZapretManager_LuCI.sh) ram
+sh <(wget -qO - https://raw.githubusercontent.com/016390aaaaa-cmyk/TestMy/main/ZapretManager_LuCI.sh) ram
 ```
 
 Чтобы панель переживала перезагрузки, выберите режим `light` или обычную установку — см. [Где держать панель](#где-держать-панель-flash-light-ram).
@@ -2065,7 +2002,7 @@ sh <(wget -qO - https://raw.githubusercontent.com/StressOzz/Zapret-Manager/main/
 <details>
 <summary><b>Ничего не помогло</b></summary>
 
-Зайдите в **Система → Системная информация**, нажмите **«Скопировать отчёт»** и напишите в [Telegram-сообщество](https://t.me/stressozz_manager), приложив отчёт и описав проблему. Так вам помогут гораздо быстрее.
+Зайдите в **Система → Системная информация** и нажмите **«Скопировать отчёт»** — он содержит почти всё необходимое для диагностики.
 
 </details>
 
@@ -2240,7 +2177,7 @@ flowchart LR
 
 | Слой | Где | Что делает |
 |---|---|---|
-| **Страницы LuCI** | `/www/luci-static/resources/view/zapret-manager/*.js`, общий модуль `…/zapret-manager/common.js`, стили `…/view/zapret-manager/style.css` | 18 страниц-модулей LuCI (`view.extend`), включая `openwrt.js` — «Настройка OpenWrt» и `thanks.js` — «Спасибо и поддержка». Меню — `/usr/share/luci/menu.d/luci-app-zapret-manager.json` (**Службы → Zapret Manager**). Экран условий использования — в `common.js`, общий для LuCI и Web UI. |
+| **Страницы LuCI** | `/www/luci-static/resources/view/zapret-manager/*.js`, общий модуль `…/zapret-manager/common.js`, стили `…/view/zapret-manager/style.css` | 18 страниц-модулей LuCI (`view.extend`), включая `openwrt.js` — «Настройка OpenWrt» и `thanks.js` — «Благодарности». Меню — `/usr/share/luci/menu.d/luci-app-zapret-manager.json` (**Службы → Zapret Manager**). Экран условий использования — в `common.js`, общий для LuCI и Web UI. |
 | **Web UI** | `/www/zm-webui.html`, `/www/zm/app.js`, `/www/zm/app.css` | Отдельная «оболочка», которая грузит **те же** JS-модули страниц, что и LuCI (см. [Web UI изнутри](#web-ui-изнутри)). Своё у Web UI — меню, «Оформление», живые фоны и радио. |
 | **Транспорт** | `uhttpd` + `uhttpd-mod-ubus`, путь `/ubus` | JSON-RPC 2.0 поверх HTTP: `call(sid, object, method, params)`. |
 | **Авторизация** | `rpcd` (сессии), `/usr/share/rpcd/acl.d/luci-app-zapret-manager.json` | Логин — стандартный `session.login` (пользователь и пароль роутера). ACL решает, какие методы доступны сессии. |
@@ -2450,7 +2387,6 @@ grep '# zm-' /etc/crontabs/root
 | `/www/luci-static/resources/zapret-manager/common.js` | общий JS-модуль: вызовы API, тосты, журналы заданий, пакетные запросы |
 | `/www/zm-webui.html`, `/www/zm/` | Web UI: оболочка, стили, `theme.txt`, `look.json` |
 | `/etc/zapret-manager.terms` | отметка о принятии условий использования (версия и время) |
-| `/etc/zapret-manager.id`, `/etc/zapret-manager.nostats` | случайный номер установки для счётчика; если создать `.nostats` — счётчик выключен |
 | `/usr/share/zm-redbtn/` | каталог сервисов для Steer и Forkozz |
 | `/etc/zm-steer/`, `/etc/zm-awg/` | данные Steer (секции, подписки, свой WARP) и AmneziaWG (`WARP.conf`, точки входа) |
 | `/etc/config/zapret` | конфигурация Zapret (блок `NFQWS_OPT` — стратегия) |
@@ -2500,7 +2436,7 @@ grep '# zm-' /etc/crontabs/root
 - **Только домашняя сеть.** Для Web UI включён `rfc1918_filter`: `uhttpd` не отвечает на запросы с публичных адресов к своему приватному адресу. Плюс стандартный firewall OpenWrt не открывает порт 7788 со стороны WAN. **Не пробрасывайте порт 7788 в интернет.** Для доступа извне используйте [Удалённый доступ](#-удалённый-доступ-tailscale).
 - **Терминал (ttyd)** слушает только локальную сеть и спрашивает пароль роутера. Вкладка htop в Мониторе работает, только пока страница открыта.
 - **Отчёт «Системная информация»** вычищает адреса, ключи, пароли и ссылки подписок — его можно отправлять в поддержку.
-- **Счётчик установок.** Личные данные панель не собирает. Для счётчика «установлен на N роутерах» роутер отправляет автору только случайный номер установки (`/etc/zapret-manager.id`) и версию панели. Выключить: `touch /etc/zapret-manager.nostats`.
+- **Приватность.** Панель не собирает и не отправляет никакие данные.
 - **Опасные изменения проверяются и откатываются:** список рекламы (DNS не ответил 30 с — откат), конфигурация Mihomo и sing-box (не запустился — откат), смена зеркала OpenWrt, сеть после восстановления копии (через 90 с).
 - **Источники загрузок** — GitHub авторов проектов и репозитории OpenWrt. Зеркала GitHub используются только тогда, когда GitHub не ответил (это можно выключить: Система → Доступ к GitHub → «Напрямую»).
 - **`#nochange`.** Строка `#nochange` в стратегии или списке запрещает панели их менять — ни при установке, ни при обновлении, ни в тестах. Переключатели «Не изменять» ставят и снимают её сами.
@@ -2524,7 +2460,7 @@ grep '# zm-' /etc/crontabs/root
 | Переустановить панель | `zmw` |
 
 > [!TIP]
-> Если просите помощи в [сообществе](https://t.me/stressozz_manager), начните с **Система → Системная информация → «Скопировать отчёт»** — в нём уже есть почти всё из таблицы выше.
+> Начните с **Система → Системная информация → «Скопировать отчёт»** — в нём уже есть почти всё из таблицы выше.
 
 ---
 
@@ -2546,7 +2482,7 @@ grep '# zm-' /etc/crontabs/root
 
 ## 🤝 Благодарности
 
-Zapret Manager собирает в одном месте работу этих проектов и их авторов (тот же список — на странице «Спасибо и поддержка» в панели):
+Zapret Manager собирает в одном месте работу этих проектов и их авторов (тот же список — на странице «Благодарности» в панели):
 
 **Обход блокировок**
 
@@ -2640,12 +2576,6 @@ Zapret Manager собирает в одном месте работу этих �
 
 <div align="center">
 
-### 💬 Сообщество
-
-Есть вопрос или что-то не получается? Пишите — помогут.
-
-[**Telegram — Zapret Manager**](https://t.me/stressozz_manager) · [**StressKVN — обход белых списков**](http://stresskvn.lol/)
-
-Made with ❤️ by **[StressOzz](https://github.com/StressOzz)** for the OpenWrt community
+Made for the OpenWrt community
 
 </div>

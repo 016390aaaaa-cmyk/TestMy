@@ -236,21 +236,19 @@ fi
 
 CONF="/etc/config/zapret"
 ZM_VERSION="@ZM_VERSION@"
-ZM_SCRIPT_URL="https://raw.githubusercontent.com/StressOzz/Zapret-Manager/refs/heads/main/ZapretManager_LuCI.sh"
-ZM_STATS_URL="http://89.191.225.101:8787"
-ZM_STATS_OFF="/etc/zapret-manager.nostats"
-ZM_STATS_IDF="/etc/zapret-manager.id"
+ZM_SCRIPT_URL="https://raw.githubusercontent.com/016390aaaaa-cmyk/TestMy/refs/heads/main/ZapretManager_LuCI.sh"
+# Телеметрия удалена: панель не отправляет данные на сторонние серверы
 ZM_TERMS_FILE="/etc/zapret-manager.terms"
 ZM_TERMS_VER=1
 GH_RAW="https://raw.githubusercontent.com"
 GH_MAIN="https://github.com"
-MT_URL_ITDOG="${GH_RAW}/StressOzz/Zapret-Manager/refs/heads/main/files/MagiTrickle/configAD.yaml"
-MT_URL_IH1="${GH_RAW}/StressOzz/Zapret-Manager/refs/heads/main/files/MagiTrickle/config.yaml"
-MT_URL_IH2="${GH_RAW}/StressOzz/Zapret-Manager/refs/heads/main/files/MagiTrickle/configOLD.yaml"
-EXCLUDE_URL="${GH_RAW}/StressOzz/Zapret-Manager/refs/heads/main/zapret-hosts-user-exclude.txt"
+MT_URL_ITDOG="${GH_RAW}/016390aaaaa-cmyk/TestMy/refs/heads/main/files/MagiTrickle/configAD.yaml"
+MT_URL_IH1="${GH_RAW}/016390aaaaa-cmyk/TestMy/refs/heads/main/files/MagiTrickle/config.yaml"
+MT_URL_IH2="${GH_RAW}/016390aaaaa-cmyk/TestMy/refs/heads/main/files/MagiTrickle/configOLD.yaml"
+EXCLUDE_URL="${GH_RAW}/016390aaaaa-cmyk/TestMy/refs/heads/main/zapret-hosts-user-exclude.txt"
 FLOWSEAL_ZIP="${GH_MAIN}/Flowseal/zapret-discord-youtube/archive/refs/heads/main.zip"
 FLOWSEAL_FAKE_RAW="${GH_MAIN}/Flowseal/zapret-discord-youtube/raw/refs/heads/main/bin"
-STR_URL="${GH_RAW}/StressOzz/Zapret-Manager/refs/heads/main/files/StrYoutube"
+STR_URL="${GH_RAW}/016390aaaaa-cmyk/TestMy/refs/heads/main/files/StrYoutube"
 ZAPRET_VER="72.20260307"
 JOBS_DIR="/tmp/zapret-manager-luci"
 ZM_STATE_DIR="/opt/zapret-manager-luci/state"
@@ -1243,8 +1241,7 @@ _za_main() { _zmL test && _za_main "$@"; }
 _zt_detect() { _zmL test && _zt_detect "$@"; }
 _zt_sync() { _zmL test && _zt_sync "$@"; }
 system_time_set() { _zmL system && system_time_set "$@"; }
-zm_stats_hit() { _zmL system && zm_stats_hit "$@"; }
-zm_stats_get() { _zmL system && zm_stats_get "$@"; }
+
 _zm_job_label() { _zmL system && _zm_job_label "$@"; }
 zm_update_action() { _zmL system && zm_update_action "$@"; }
 do_mixomo_install() { _zmL mixomo && do_mixomo_install "$@"; }
@@ -2562,7 +2559,7 @@ _z2_arch() { awk -F\' '/DISTRIB_ARCH/ {print $2}' /etc/openwrt_release 2>/dev/nu
 _z2_arch_ok() { case "$(_z2_arch)" in aarch64_*) return 0 ;; esac; return 1; }
 
 ZM_STR_DIR="$ZM_STATE_DIR/str"
-ZM_STR_URL="${GH_RAW}/StressOzz/Zapret-Manager/refs/heads/main/files"
+ZM_STR_URL="${GH_RAW}/016390aaaaa-cmyk/TestMy/refs/heads/main/files"
 ZM_STR_NAMES="StrV StrDiscord StrGVideo"
 _str_fetch() {
 	local n="$1" f t
@@ -2869,7 +2866,7 @@ tls_clienthello_sochi_park.bin tls_clienthello_steam_chat_com.bin tls_clienthell
 tls_clienthello_teamspeak_com.bin tls_clienthello_www_sferum_ru.bin tls_clienthello_www_google_com_2.bin"
 
 ZAPRET_FAKE_RAW="${GH_MAIN}/bol-van/zapret/raw/refs/heads/master/files/fake"
-ZM_FAKE_RAW="${GH_MAIN}/StressOzz/Zapret-Manager/raw/refs/heads/main/files"
+ZM_FAKE_RAW="${GH_MAIN}/016390aaaaa-cmyk/TestMy/raw/refs/heads/main/files"
 FAKE_FAIL="$JOBS_DIR/fake_fail"
 _fake_missing() {
 	local f d=/opt/zapret/files/fake
@@ -3584,11 +3581,11 @@ _flow_offloading_fix_applied() {
 _expert_mode() { [ -f "$EXPERT_MODE_FILE" ] && echo true || echo false; }
 
 system_status() {
-	printf '{"quic_blocked":%s,"ipv6_enabled":%s,"flow_offloading_fix":%s,"flow_mode":"%s","fw4_tpl":%s,"steer_installed":%s,"steer_offload_fix":%s,"steer_offload_off":%s,"zapret_fix_off":%s,"zapret_installed":%s,"watch_off":%s,"expert_mode":%s,"pkg":"%s",%s,"zm_total":%s}\n' \
+	printf '{"quic_blocked":%s,"ipv6_enabled":%s,"flow_offloading_fix":%s,"flow_mode":"%s","fw4_tpl":%s,"steer_installed":%s,"steer_offload_fix":%s,"steer_offload_off":%s,"zapret_fix_off":%s,"zapret_installed":%s,"watch_off":%s,"expert_mode":%s,"pkg":"%s",%s}\n' \
 		"$(_quic_blocked)" "$(_ipv6_enabled_in_zapret)" "$(_flow_offloading_fix_applied)" "$(_fw4_offload_mode)" "$([ -f "$FW4_TPL" ] && echo true || echo false)" \
 		"$(stl_present && echo true || echo false)" "$(_ft_steer_applied && echo true || echo false)" "$([ -f "$FT_STEER_OFF" ] && echo true || echo false)" \
 		"$([ -f "$FT_ZAPRET_OFF" ] && echo true || echo false)" "$([ -x /etc/init.d/zapret ] || [ -x /etc/init.d/zapret2 ] && echo true || echo false)" "$([ -f "$WATCH_OFF" ] && echo true || echo false)" \
-		"$(_expert_mode)" "$PKG" "$(_zt_json)" "$(_zm_stats_cached)"
+		"$(_expert_mode)" "$PKG" "$(_zt_json)"
 }
 
 ZM_V6_ADDRS="2001:4860:4860::8888 2606:4700:4700::1111 2a02:6b8::feed:0ff"
@@ -5056,27 +5053,7 @@ _zm_panel_latest() {
 
 _zm_newer() { [ -n "$1" ] && _st_ver_lt "$ZM_VERSION" "$1"; }
 
-_zm_stats_on() { [ -n "$ZM_STATS_URL" ] && [ ! -e "$ZM_STATS_OFF" ] && [ -z "$ZM_NO_STATS" ]; }
-_zm_stats_age() { local t; t="$(date -r "$1" +%s 2>/dev/null)" || { echo 999999; return; }; echo $(( $(date +%s) - t )); }
-_zm_stats_fetch() {
-	mkdir -p "$JOBS_DIR"
-	rm -f "$2.t.$$"
-	if _zm_has curl; then command curl -fsS --connect-timeout 4 --max-time 6 -A "zapret-manager/$ZM_VERSION" -o "$2.t.$$" "$1" 2>/dev/null
-	else command wget -q -T 6 -U "zapret-manager/$ZM_VERSION" -O "$2.t.$$" "$1" 2>/dev/null; fi
-	if grep -q '"total":[0-9]' "$2.t.$$" 2>/dev/null; then mv -f "$2.t.$$" "$2"; rm -f "$2.fail"; return 0; fi
-	rm -f "$2.t.$$"
-	: > "$2.fail"
-	return 1
-}
-_zm_stats_due() { [ "$(_zm_stats_age "$1")" -ge "$2" ] && [ "$(_zm_stats_age "$1.fail")" -ge 120 ]; }
-_zm_stats_total() { sed -n 's/.*"total":\([0-9]*\).*/\1/p' "$1" 2>/dev/null | head -n1; }
-_zm_stats_cached() {
-	_zm_stats_on || { echo null; return 0; }
-	local f="$JOBS_DIR/stats.json" t
-	t="$(_zm_stats_total "$f")"
-	_zm_stats_due "$f" 60 && ( _zm_stats_fetch "$ZM_STATS_URL/count" "$f" ) >/dev/null 2>&1 </dev/null &
-	echo "${t:-null}"
-}
+
 
 zm_update_status() {
 	local latest
@@ -5087,7 +5064,7 @@ zm_update_status() {
 
 ZM_CL_FILE="/opt/zapret-manager-luci/CHANGELOG.md"
 ZM_CL_PENDING="$ZM_STATE_DIR/cl.pending"
-ZM_CL_URLS="${GH_RAW}/StressOzz/Zapret-Manager/refs/heads/main/CHANGELOG.md https://cdn.jsdelivr.net/gh/StressOzz/Zapret-Manager@main/CHANGELOG.md"
+ZM_CL_URLS="${GH_RAW}/016390aaaaa-cmyk/TestMy/refs/heads/main/CHANGELOG.md https://cdn.jsdelivr.net/gh/016390aaaaa-cmyk/TestMy@main/CHANGELOG.md"
 
 _zm_cl_get() {
 	local out="$1" u
@@ -7526,7 +7503,7 @@ _st_sub_label() {
 	[ -s "$ST_SUB" ] || return 0
 	if [ -s "$ST_SUB_TITLE" ]; then
 		case "$(head -n1 "$ST_SUB_TITLE")" in
-			*🌨*VPN*) echo "StressKVN" ;;
+
 			*) head -n1 "$ST_SUB_TITLE" ;;
 		esac
 	elif [ -s "$ST_SUB_URL" ]; then sed -n 's#^[a-z]*://\([^/:?]*\).*#\1#p' "$ST_SUB_URL" | head -n1
@@ -9399,8 +9376,7 @@ case "$cmd" in
 	system_time_set)                      system_time_set "$1" ;;
 	zm_update_status)                     zm_update_status ;;
 	zm_update_action)                     zm_update_action ;;
-	zm_stats_get)                         zm_stats_get ;;
-	zm_stats_hit)                         zm_stats_hit ;;
+
 	zm_changelog)                         case "$1" in local|remote|all) zm_changelog "$1" ;; *) echo '{"error":"неизвестный режим"}' ;; esac ;;
 	zm_changelog_seen)                    zm_changelog seen ;;
 	zm_changelog_sync)                    _zm_cl_sync ;;
@@ -13107,33 +13083,7 @@ system_time_set() {
 	printf '{"ok":true,%s}\n' "$(_zt_json)"
 }
 
-_zm_stats_id() {
-	local id=""
-	[ -s "$ZM_STATS_IDF" ] && id="$(head -c 80 "$ZM_STATS_IDF" | tr -cd '0-9a-f')"
-	if [ "${#id}" -lt 32 ]; then
-		id="$(head -c 16 /dev/urandom 2>/dev/null | hexdump -v -e '1/1 "%02x"' 2>/dev/null)"
-		[ "${#id}" -ge 32 ] || id="$(tr -cd '0-9a-f' < /proc/sys/kernel/random/uuid 2>/dev/null)"
-		[ "${#id}" -ge 32 ] || return 1
-		printf '%s\n' "$id" > "$ZM_STATS_IDF" 2>/dev/null || return 1
-	fi
-	printf '%s' "$id" | cut -c1-64
-}
 
-zm_stats_hit() {
-	_zm_stats_on || return 0
-	local id
-	id="$(_zm_stats_id)" || return 0
-	_zm_stats_fetch "$ZM_STATS_URL/hit?id=$id&v=$ZM_VERSION" "$JOBS_DIR/stats.json"
-	return 0
-}
-
-zm_stats_get() {
-	_zm_stats_on || { echo '{"on":false}'; return 0; }
-	local f="$JOBS_DIR/stats.json" t
-	_zm_stats_due "$f" 10 && _zm_stats_fetch "$ZM_STATS_URL/count" "$f"
-	t="$(_zm_stats_total "$f")"
-	printf '{"on":true,"total":%s}\n' "${t:-null}"
-}
 
 _zm_update_fetch() {
 	rm -f "$1"
@@ -20242,13 +20192,13 @@ _do_install_zapret2_core() {
 	echo "==> Настраиваем стратегии"
 	mkdir -p /opt/zapret2/init.d/openwrt/custom.d
 	_nochange_fetch /opt/zapret2/init.d/openwrt/custom.d/50-discord_media.sh \
-		"${GH_RAW}/StressOzz/Zapret-Manager/refs/heads/main/files/Zapret2/50-discord_media.sh" \
+		"${GH_RAW}/016390aaaaa-cmyk/TestMy/refs/heads/main/files/Zapret2/50-discord_media.sh" \
 		|| echo "!! Не удалось загрузить 50-discord_media.sh"
 	if _nochange_in /etc/config/zapret2; then echo "   · Стратегия Zapret2 помечена #nochange — оставляем как есть"
 	else
-		_nochange_fetch /etc/config/zapret2 "${GH_RAW}/StressOzz/Zapret-Manager/refs/heads/main/files/Zapret2/zapret2" || echo "!! Не удалось загрузить zapret2"
+		_nochange_fetch /etc/config/zapret2 "${GH_RAW}/016390aaaaa-cmyk/TestMy/refs/heads/main/files/Zapret2/zapret2" || echo "!! Не удалось загрузить zapret2"
 	fi
-	_nochange_fetch /opt/zapret2/ipset/zapret_hosts_discord.txt "${GH_RAW}/StressOzz/Zapret-Manager/refs/heads/main/files/Zapret2/zapret_hosts_discord.txt" \
+	_nochange_fetch /opt/zapret2/ipset/zapret_hosts_discord.txt "${GH_RAW}/016390aaaaa-cmyk/TestMy/refs/heads/main/files/Zapret2/zapret_hosts_discord.txt" \
 		|| echo "!! Не удалось загрузить zapret_hosts_discord.txt"
 
 	echo "==> Запускаем Zapret2"
@@ -22383,7 +22333,7 @@ _test_prepare_urls() {
 		"forum.ru-board.com|https://forum.ru-board.com" \
 		"play.google.com|https://play.google.com" \
 		"downloads.openwrt.org|https://downloads.openwrt.org" \
-		"githubusercontent.com|https://raw.githubusercontent.com/StressOzz/Zapret-Manager/refs/heads/main/Zapret-Manager.sh" \
+		"githubusercontent.com|https://raw.githubusercontent.com/016390aaaaa-cmyk/TestMy/refs/heads/main/Zapret-Manager.sh" \
 		>> "$out"
 	curl -fsSL --connect-timeout 8 --max-time 15 "$TEST_DOMAINS_JSON" 2>/dev/null \
 		| sed -n 's/.*"id":[[:space:]]*"\([^"]*\)".*"host":[[:space:]]*"\([^"]*\)".*/\1|\2/p' >> "$out"
@@ -42743,7 +42693,7 @@ list_methods() {
 	json_add_object "zm_update_status";        json_close_object
 	json_add_object "zm_update_action";        json_close_object
 	json_add_object "zm_changelog";            json_add_string "mode" "string"; json_close_object
-	json_add_object "zm_stats_get";            json_close_object
+
 	json_add_object "zm_changelog_seen";       json_close_object
 	json_add_object "mixomo_status";           json_close_object
 	json_add_object "mixomo_action";           json_add_string "action" "string"; json_close_object
@@ -42935,7 +42885,7 @@ call_method() {
 		zm_update_status)        "$BACKEND" zm_update_status ;;
 		zm_update_action)        "$BACKEND" zm_update_action ;;
 		zm_changelog)            json_get_var mode mode;       "$BACKEND" zm_changelog "$mode" ;;
-		zm_stats_get)            "$BACKEND" zm_stats_get ;;
+
 		zm_changelog_seen)       "$BACKEND" zm_changelog_seen ;;
 		mixomo_status)           "$BACKEND" mixomo_status ;;
 		mixomo_action)           json_get_var action action; "$BACKEND" mixomo_action "$action" ;;
@@ -43061,7 +43011,7 @@ cat > '/usr/share/rpcd/acl.d/luci-app-zapret-manager.json' << 'ZM_INSTALLER_EOF'
 					"test_results",
 					"zm_update_status",
 					"zm_changelog",
-					"zm_stats_get",
+
 					"purge_scan",
 					"backup_list",
 					"mixomo_status",
@@ -43315,7 +43265,7 @@ cat > '/usr/share/luci/menu.d/luci-app-zapret-manager.json' << 'ZM_INSTALLER_EOF
 		"action": { "type": "view", "path": "zapret-manager/monitor" }
 	},
 	"admin/services/zapret-manager/thanks": {
-		"title": "Спасибо и поддержка",
+		"title": "Благодарности",
 		"order": 90,
 		"action": { "type": "view", "path": "zapret-manager/thanks" }
 	}
@@ -43470,7 +43420,7 @@ var callBackupUp = zmDeclare({ object: 'zapret-manager', method: 'backup_up', pa
 var callBackupDown = zmDeclare({ object: 'zapret-manager', method: 'backup_down', params: ['id', 'off'], expect: {} });
 var callSysinfoRun = zmDeclare({ object: 'zapret-manager', method: 'sysinfo_run', expect: {} });
 var callSysinfoGet = zmDeclare({ object: 'zapret-manager', method: 'sysinfo_get', expect: {} });
-var callStatsGet = zmDeclare({ object: 'zapret-manager', method: 'zm_stats_get', expect: {} });
+
 var callZmPages = zmDeclare({ object: 'zapret-manager', method: 'zm_pages', params: ['action', 'value'], expect: {} });
 var callMirrorStatus = zmDeclare({ object: 'zapret-manager', method: 'mirror_status', expect: {} });
 var callMirrorSet = zmDeclare({ object: 'zapret-manager', method: 'mirror_set', params: ['id'], expect: {} });
@@ -43739,7 +43689,7 @@ function flagFont() {
 	document.head.appendChild(s);
 }
 
-var CL_HISTORY = 'https://github.com/StressOzz/Zapret-Manager/blob/main/CHANGELOG.md';
+var CL_HISTORY = 'https://github.com/016390aaaaa-cmyk/TestMy/blob/main/CHANGELOG.md';
 var CL_KINDS = { '➕': [ 'new', 'Новое' ], '⚡': [ 'imp', 'Улучшено' ], '🐞': [ 'fix', 'Исправлено' ], '🗑': [ 'del', 'Убрано' ] };
 function clParse(text) {
 	var secs = [], cur = null;
@@ -43944,7 +43894,7 @@ function termsScreen(view) {
 					sec('3. Ограничение ответственности', 'Автор и участники проекта не отвечают за прямой или косвенный ущерб: неработоспособность роутера, потерю настроек и данных, перерывы в работе интернета, блокировку сервисов, требования третьих лиц, штрафы и упущенную выгоду.'),
 					sec('4. Отказ от претензий', 'Принимая условия, вы отказываетесь от претензий к автору и участникам проекта, связанных с программой, в той мере, в какой это допускает закон.'),
 					sec('5. Программы других авторов', 'Zapret, sing-box, Mihomo, WARP и другие компоненты принадлежат своим авторам и распространяются по своим лицензиям. Панель только скачивает их из официальных источников и настраивает.'),
-					E('div', { 'class': 'zm-tm-sec' }, [ E('h3', {}, '6. Данные'), E('p', {}, [ 'Личные данные не собираются. Для счётчика установок панель отправляет автору случайный номер роутера и версию. Отключить: файл ', E('code', {}, '/etc/zapret-manager.nostats'), '.' ]) ]),
+					E('div', { 'class': 'zm-tm-sec' }, [ E('h3', {}, '6. Данные'), E('p', {}, 'Панель не собирает и не отправляет никакие данные.') ]),
 					sec('7. Изменение условий', 'Новая редакция условий покажется при следующем входе в панель.')
 				]),
 				E('div', { 'class': 'zm-tm-foot' }, foot)
@@ -46349,7 +46299,7 @@ return baseclass.extend({
 	sysinfoRun: callSysinfoRun,
 	sysinfoGet: callSysinfoGet,
 	rebootRouter: rebootRouter,
-	statsGet: callStatsGet,
+
 	zmPages: callZmPages,
 	mirrorStatus: callMirrorStatus,
 	mirrorSet: callMirrorSet,
@@ -46810,10 +46760,8 @@ return view.extend({
 		if (!document.body.classList.contains('zmw-body')) wrap.appendChild(zm.alertBanners(healthData, function() { location.reload(); }));
 		if (!document.body.classList.contains('zmw-body')) wrap.appendChild(E('div', { 'class': 'zm-header' }, [
 			E('h2', {}, 'Zapret Manager для LuCI и Web'),
-			E('span', { 'class': 'zm-header-by' }, 'by StressOzz · v' + (zmUpdate.current || '?')),
+			E('span', { 'class': 'zm-header-by' }, 'v' + (zmUpdate.current || '?')),
 			E('div', { 'class': 'zm-header-links' }, [
-				E('a', { 'href': 'http://stresskvn.lol/', 'target': '_blank', 'rel': 'noreferrer' }, 'StressKVN — обход белых списков!'),
-				E('a', { 'href': 'https://t.me/stressozz_manager', 'target': '_blank', 'rel': 'noreferrer' }, 'Сообщество Telegram'),
 				healthData && +healthData.zmw > 0 ? E('a', { 'href': 'http://' + window.location.hostname + ':' + healthData.zmw + '/', 'target': '_blank', 'rel': 'noreferrer', 'class': 'zm-webui-link' }, 'Web UI ↗') : E([])
 			])
 		]));
@@ -48983,8 +48931,7 @@ return view.extend({
 			mainCard.appendChild(E('h3', {}, 'Удалённый доступ'));
 			mainCard.appendChild(E('p', { 'class': 'zm-hint', 'style': 'margin-top:-6px' }, 'Работает на Tailscale. Телефон в любой сети — мобильный интернет, кафе, поездка — выходит в интернет через домашний роутер, и Zapret, Steer и sTGWS работают для него как дома.'));
 			mainCard.appendChild(E('div', { 'class': 'zm-refresh-banner zm-show', 'role': 'note', 'style': 'margin:12px 0 4px; font-size:14px' }, [ E('span', {}, [
-				E('b', {}, 'Не для новичков.'), ' Ставьте, только если знаете, как настраивается Tailscale: сервер, одобрение маршрутов, приложение на телефоне. Белые списки он не обходит — для них есть ',
-				E('a', { 'href': 'http://stresskvn.lol/', 'target': '_blank', 'rel': 'noreferrer' }, 'StressKVN'), '.'
+				E('b', {}, 'Не для новичков.'), ' Ставьте, только если знаете, как настраивается Tailscale: сервер, одобрение маршрутов, приложение на телефоне.'
 			]) ]));
 			mainCard.appendChild(E('p', { 'class': 'zm-hint' }, 'Всё ставится с GitHub: уменьшенная сборка Tailscale для OpenWrt и страница для LuCI.'));
 			mainCard.appendChild(E('div', { 'class': 'zm-kv' }, [
@@ -62520,129 +62467,22 @@ var CREDIT_GROUPS = [
 	[ 'tg', 'Telegram' ], [ 'dns', 'DNS, списки и блокировка рекламы' ], [ 'other', 'Прочее' ]
 ];
 
-var SP_GH = 'https://github.com/StressOzz';
-var SP_TG = 'https://t.me/StressOzz_Manager';
-var SP_PAY = [
-	{ id: 'tb', title: 'ТБанк донаты', url: 'https://pay.cloudtips.ru/p/0d41f298' },
-	{ id: 'oz', title: 'Ozon донаты', url: 'https://finance.ozon.ru/apps/sbp/ozonbankpay/019f8e08-d609-710b-ab0e-47fae3a07547?attempt=1' }
-];
-var SP_KVN_BOT = 'https://t.me/StressKVN_bot';
-var SP_KVN_SITE = 'http://stresskvn.lol/';
-var SP_KVN_ICO = {
-	shield: '<path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6z"/><path d="M9 12l2 2 4-4"/>',
-	list: '<path d="M9 6h12"/><path d="M9 12h12"/><path d="M9 18h12"/><path d="M4 6l1 1 2-2"/><path d="M4 12l1 1 2-2"/><path d="M4 18l1 1 2-2"/>',
-	bolt: '<path d="M13 2L4 14h8l-1 8 9-12h-8z"/>',
-	inf: '<path d="M12 12c-2-2.7-4-4-6-4a4 4 0 0 0 0 8c2 0 4-1.3 6-4z"/><path d="M12 12c2 2.7 4 4 6 4a4 4 0 0 0 0-8c-2 0-4 1.3-6 4z"/>',
-	lock: '<rect x="4" y="11" width="16" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/>',
-	play: '<rect x="2" y="5" width="20" height="14" rx="4"/><path d="M10 9l5 3-5 3z"/>',
-	clock: '<circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/>',
-	globe: '<circle cx="12" cy="12" r="9"/><path d="M3 12h18"/><path d="M12 3c2.5 2.7 3.8 5.7 3.8 9s-1.3 6.3-3.8 9c-2.5-2.7-3.8-5.7-3.8-9S9.5 5.7 12 3z"/>',
-	route: '<circle cx="5" cy="18" r="2"/><circle cx="19" cy="6" r="2"/><path d="M7 18h7a4 4 0 0 0 0-8h-4a4 4 0 0 1 0-8h7"/>',
-	gift: '<rect x="3" y="9" width="18" height="12" rx="2"/><path d="M12 9v12"/><path d="M3 13h18"/><path d="M12 9c-1.5-3-4-4.5-5.5-3.2S7.5 9 12 9z"/><path d="M12 9c1.5-3 4-4.5 5.5-3.2S16.5 9 12 9z"/>',
-	router: '<rect x="3" y="13" width="18" height="7" rx="2"/><path d="M7 16.5h.01"/><path d="M11 16.5h.01"/><path d="M17 13V8"/><path d="M14 6.5a4 4 0 0 1 6 0"/>',
-	heart: '<path d="M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.6-7 10-7 10z"/>',
-	web: '<circle cx="12" cy="12" r="9"/><path d="M3 12h18"/><path d="M12 3c2.5 2.7 3.8 5.7 3.8 9s-1.3 6.3-3.8 9c-2.5-2.7-3.8-5.7-3.8-9S9.5 5.7 12 3z"/>'
-};
-// Значок Telegram — залитый самолётик
-var SP_TG_ICO = '<svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.7 3.6 2.9 10.5c-1.2.5-1.2 1.2-.2 1.5l4.6 1.4 1.7 5.4c.2.6.1.8.7.8.5 0 .7-.2 1-.5l2.3-2.2 4.7 3.5c.9.5 1.5.2 1.7-.8l3.1-14.6c.3-1.3-.5-1.9-1.8-1.4zM9.4 13.5l9.1-5.7c.4-.3.8-.1.5.2l-7.6 6.9-.3 3.3z"/></svg>';
-var SP_OUT_ICO = '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg>';
-function spGo(href, cls, ico, label, out) {
-	var i = E('span', { 'class': 'zm-kv-go-i' }), a;
-	i.innerHTML = ico;
-	if (out) { a = E('span', { 'class': 'zm-kv-go-out' }); a.innerHTML = SP_OUT_ICO; }
-	return E('a', { 'class': 'zm-kv-go ' + cls, 'href': href, 'target': '_blank', 'rel': 'noreferrer' }, [ i, E('span', {}, label), a || E([]) ]);
-}
-var SP_KVN_F = [
-	[ 'shield', 'Работает даже при жёсткой фильтрации' ],
-	[ 'list', 'Работает в условиях белых списков' ],
-	[ 'bolt', 'Высокая скорость без ограничений' ],
-	[ 'inf', 'Полностью безлимитный трафик' ],
-	[ 'lock', 'Защита соединения и приватности' ],
-	[ 'play', 'YouTube без рекламы' ],
-	[ 'clock', 'Работа 24/7 без отключений' ],
-	[ 'globe', 'Более 40 локаций' ],
-	[ 'route', 'Умная маршрутизация: иностранные ресурсы через VPN, российский трафик напрямую' ],
-	[ 'gift', 'Бесплатный тест — 3 дня без оплаты' ],
-	[ 'router', 'Подходит для роутеров на OpenWrt: настраивается один раз и работает для всех устройств в сети' ]
-];
-function spIco(n, cls, size) {
-	var s = E('span', { 'class': cls });
-	s.innerHTML = '<svg width="' + (size || 18) + '" height="' + (size || 18) + '" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">' + SP_KVN_ICO[n] + '</svg>';
-	return s;
-}
+
 
 function spPl(n, one, few, many) {
 	var a = n % 10, b = n % 100;
 	return n + ' ' + (a === 1 && b !== 11 ? one : a >= 2 && a <= 4 && (b < 12 || b > 14) ? few : many);
 }
 
-function spLink(href, label, cls) {
-	return E('a', { 'class': 'cbi-button' + (cls ? ' ' + cls : ''), 'href': href, 'target': '_blank', 'rel': 'noreferrer' }, label);
-}
+
 
 return view.extend({
 	load: function() {
 		zm.injectCss();
-		return zm.systemStatus().catch(function() { return {}; });
 	},
 
-	render: function(sysData) {
+	render: function() {
 		var wrap = E('div', { 'class': 'zm-wrap zm-sp' });
-
-		wrap.appendChild(E('div', { 'class': 'zm-card' }, [
-			E('div', { 'class': 'zm-sp-who' }, [ E('b', {}, 'StressOzz'), E('span', {}, 'автор Zapret Manager') ]),
-			E('p', { 'class': 'zm-sp-text' }, 'Zapret Manager бесплатный и с открытым кодом. Если панель вам помогает — можете поддержать проект.'),
-			E('div', { 'class': 'zm-sp-btns' }, [ spLink(SP_GH, 'GitHub StressOzz'), spLink(SP_TG, 'Сообщество StressOzz в Telegram') ])
-		]));
-
-		wrap.appendChild(E('div', { 'class': 'zm-card' }, [
-			E('h3', {}, 'Поддержать проект'),
-			E('div', { 'class': 'zm-sp-pays' }, SP_PAY.map(function(p) {
-				var pic = E('span', { 'class': 'zm-sp-qr' });
-				pic.innerHTML = zm.qrSvg(p.url, 132);
-				var svg = pic.firstChild;
-				if (svg && svg.setAttribute) svg.setAttribute('aria-label', 'QR-код: ' + p.title);
-				return E('a', { 'class': 'zm-sp-pay zm-sp-' + p.id, 'href': p.url, 'target': '_blank', 'rel': 'noreferrer' }, [
-					pic,
-					E('span', { 'class': 'zm-sp-pay-t' }, [
-						E('b', {}, p.title),
-						E('span', {}, 'По СБП или любой картой'),
-						E('span', { 'class': 'zm-sp-go' }, 'Поддержать →')
-					])
-				]);
-			}))
-		]));
-
-		wrap.appendChild(E('div', { 'class': 'zm-card zm-kvn' }, [
-			E('div', { 'class': 'zm-kv-head' }, [
-				E('div', { 'class': 'zm-kv-t' }, [
-					E('div', { 'class': 'zm-kv-name' }, [
-						E('div', { 'class': 'zm-kv-h', 'role': 'heading', 'aria-level': '3' }, 'StressKVN'),
-						E('span', { 'class': 'zm-kv-free' }, [ spIco('gift', 'zm-kv-free-i', 15), '3 дня бесплатно' ])
-					]),
-					E('p', { 'class': 'zm-kv-lead' }, 'VPN на случай, когда одного Zapret мало. Работает даже при белых списках операторов и подключается к роутеру прямо из Zapret Manager.')
-				])
-			]),
-			E('div', { 'class': 'zm-kv-cta' }, [
-				spGo(SP_KVN_BOT, 'zm-kv-tg', SP_TG_ICO, 'Подключить в Telegram-боте'),
-				spGo(SP_KVN_SITE, 'zm-kv-web', '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">' + SP_KVN_ICO.web + '</svg>', 'Сайт StressKVN', true)
-			]),
-			E('div', { 'class': 'zm-kv-grid' }, SP_KVN_F.map(function(f) {
-				return E('div', { 'class': 'zm-kv-it' }, [ spIco(f[0], 'zm-kv-i'), E('span', {}, f[1]) ]);
-			}).concat([ E('div', { 'class': 'zm-kv-it zm-kv-thx' }, [ spIco('heart', 'zm-kv-i'), E('span', {}, 'Спасибо всем, кто пользуется StressKVN и советует его друзьям!') ]) ]))
-		]));
-
-		var count = E('div', { 'class': 'zm-card zm-sp-count', 'hidden': '' });
-		function showCount(n) {
-			if (!(n > 0)) return;
-			var a = n % 10, b = n % 100;
-			count.innerHTML = '';
-			count.appendChild(E('p', {}, [ 'Zapret Manager установлен на ', E('b', {}, n.toLocaleString('ru-RU')), a === 1 && b !== 11 ? ' роутере' : ' роутерах' ]));
-			count.hidden = false;
-		}
-		wrap.appendChild(count);
-		if (sysData && +sysData.zm_total > 0) showCount(+sysData.zm_total);
-		zm.statsGet().then(function(r) { if (r && r.on) showCount(+r.total); }).catch(function() {});
 
 		wrap.appendChild(E('div', { 'class': 'zm-card' }, [
 			E('h3', {}, [ 'Спасибо авторам и пользователям ', E('span', { 'class': 'zm-badge zm-off' }, spPl(CREDITS.length - 1, 'проект', 'проекта', 'проектов')) ]),
@@ -65837,8 +65677,7 @@ function secSig(d) {
 }
 
 function subName(t) {
-	t = String(t || '').trim();
-	return t.replace(/[\s\uFE0F]/g, '') === '\uD83C\uDF28VPN' ? 'StressKVN' : t;
+	return String(t || '').trim();
 }
 
 function dnsLabel(d) {
@@ -73021,7 +72860,7 @@ var ROUTES = [
 	{ id: 'pages', title: 'Компоненты панели', sub: 'Страницы панели и их размер', icon: 'layers', group: 'Сервис', view: 'system', part: 'pages' },
 	{ id: 'openwrt', title: 'Настройка OpenWrt', sub: 'Время, Wi-Fi и другие настройки', icon: 'sliders', group: 'Сервис' },
 	{ id: 'cleanup', title: 'Очистка и удаление', sub: 'Освобождение места и удаление', icon: 'trash', group: 'Сервис', view: 'system', part: 'cleanup' },
-	{ id: 'thanks', title: 'Спасибо и поддержка', sub: 'Автор и поддержка проекта', icon: 'heart', group: 'Сервис' },
+	{ id: 'thanks', title: 'Благодарности', sub: 'Проекты с открытым кодом', icon: 'heart', group: 'Сервис' },
 	{ id: 'sysinfo', title: 'Системная информация', sub: 'Отчёт о роутере и сети', icon: 'info', group: 'Сервис', view: 'system', part: 'sysinfo' }
 ];
 
@@ -73685,12 +73524,7 @@ function buildShell() {
 		E('button', { 'class': 'zmw-icon-btn zmw-burger', 'type': 'button', 'aria-label': 'Меню', 'click': openDrawer }, [ icon('menu') ]),
 		E('div', { 'class': 'zmw-titles' }, [ titleEl, subEl ]),
 		E('div', { 'class': 'zmw-top-actions' }, [
-			E('a', { 'class': 'zmw-icon-btn zmw-link-btn zmw-link-kvn', 'href': 'http://stresskvn.lol/', 'target': '_blank', 'rel': 'noreferrer', 'title': 'StressKVN — умный VPN для стабильного доступа в любых условиях.' }, [
-				icon('rocket'), E('span', { 'class': 'zmw-lbl-full' }, [ E('span', { 'class': 'zmw-kvn-l1' }, [ 'StressKVN — лучший VPN' ]), E('span', { 'class': 'zmw-kvn-l2' }, [ 'обход белых списков · телефон, ПК, роутер' ]) ]), E('span', { 'class': 'zmw-lbl-short' }, [ 'StressKVN' ])
-			]),
-			E('a', { 'class': 'zmw-icon-btn zmw-link-btn zmw-link-tg', 'href': 'https://t.me/stressozz_manager', 'target': '_blank', 'rel': 'noreferrer', 'title': 'Сообщество Telegram' }, [
-				icon('telegram'), E('span', { 'class': 'zmw-lbl-full' }, [ 'Сообщество Telegram' ]), E('span', { 'class': 'zmw-lbl-short' }, [ 'Telegram' ])
-			]),
+
 			E('span', { 'class': 'zmw-top-sep' }),
 			E('button', { 'class': 'zmw-icon-btn', 'type': 'button', 'title': 'Обновить страницу', 'click': function (ev) {
 				var b = ev.currentTarget; b.classList.add('zmw-spin'); setTimeout(function () { b.classList.remove('zmw-spin'); }, 700);
@@ -77121,7 +76955,7 @@ ZMW_IP="$(/opt/zapret-manager-luci/backend.sh lan_ip 2>/dev/null || true)"
 for _zm_c in "zms Zapret-Manager.sh" "zmw ZapretManager_LuCI.sh"; do
 	cat > "/usr/bin/${_zm_c%% *}" <<ZM_GET_EOF
 #!/bin/sh
-u="https://raw.githubusercontent.com/StressOzz/Zapret-Manager/main/${_zm_c#* }"
+u="https://raw.githubusercontent.com/016390aaaaa-cmyk/TestMy/main/${_zm_c#* }"
 ZM_GET_EOF
 	cat >> "/usr/bin/${_zm_c%% *}" <<'ZM_GET_EOF'
 t="/tmp/zm-get.$$.sh"
@@ -77153,7 +76987,7 @@ if [ "$ZM_INST_MODE" = pc ]; then
 	: > /opt/zapret-manager-luci/state/ui.pc
 	_zmi_ok "На роутере — только основа панели, в оперативной памяти: $(du -sk "$_zmi_ui" 2>/dev/null | awk '{ print $1 }') КБ"
 fi
-( /opt/zapret-manager-luci/backend.sh zm_stats_hit ) >/dev/null 2>&1 </dev/null &
+
 _zm_login_restart() {
 	if [ -x /etc/init.d/rpcd ]; then
 		/etc/init.d/rpcd restart >/dev/null 2>&1 || true

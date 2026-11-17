@@ -1424,7 +1424,7 @@ main() {
     install_magitrickle || step_fail
 ###################################################################################################
 CONFIG_PATH="/etc/magitrickle/state/config.yaml"
-confGIT="https://raw.githubusercontent.com/StressOzz/Zapret-Manager/refs/heads/main/files/MagiTrickle/configAD.yaml"
+confGIT="https://raw.githubusercontent.com/016390aaaaa-cmyk/TestMy/refs/heads/main/files/MagiTrickle/configAD.yaml"
 
 echo "Установка списка для MagiTrickle"
 
